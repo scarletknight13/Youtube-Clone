@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 0.5fr 0.5fr 5fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar filter"
+    "sidebar listings";
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: red;
+}
+
+.header {
+    grid-area: header;
+    padding: 4% 5%;
+    
+  
+}
+
+
+.i{
+    padding: 0px 30px;
+    float:right;
+}
+
+input,text{
+    justify-self: center;
+    width: 300px;
+}
+.wrapper {
+    border:1px solid #000;
+    display:inline-block;
+}
