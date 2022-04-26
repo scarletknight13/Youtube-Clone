@@ -6,7 +6,7 @@ const methodOverride = require('method-override')
 
 const controllers = require('./controllers')
 
-const PORT = 4000;
+const PORT = 4500;
 
 require('./config/db.connection')
 
