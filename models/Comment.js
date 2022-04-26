@@ -16,7 +16,7 @@ const commentSchema = new mongoose.Schema({
     },
     replies: [{
         type: mongoose.Types.ObjectId,
-        ref: Comment
+        ref: 'Comment'
     }],
     pinned: {
         type: Boolean
