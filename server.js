@@ -17,8 +17,9 @@ app.use(express.static('public'))
 
 app.use(methodOverride('_method'))
 
-
 app.use(express.urlencoded({ extended: false }))
+
+app.use('/videos', controllers.videos);
 
 app.get('/', (request, response) => response.send('Server is up and running'))
 
