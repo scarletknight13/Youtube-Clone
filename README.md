@@ -10,6 +10,8 @@ In our project we'll be emulating the sites most functionality.
 ## Wire Frames
 ![image](https://github.com/scarletknight13/project2/blob/main/Screen%20Shot%202022-04-26%20at%201.29.56%20PM%20(2).png)
 ![image](https://github.com/scarletknight13/project2/blob/main/Screen%20Shot%202022-04-26%20at%202.49.44%20PM.png)
+## ERDS
+![image](https://github.com/scarletknight13/project2/blob/main/image%20(1).png)
 ## User Stories
 - The home route will display our nav on the top, it will also have a sidebar with various links, and in our body will have multiple videos on display
 - When a user clicks on the video it should take us to a show page where we can see user comments as well as the artist's name and such.
