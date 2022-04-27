@@ -43,7 +43,7 @@ router.get('/new', (req, res)=>{
     res.render('new.js')
 })
 
-router.post('/video', async (req, res, next) =>{
+router.post('/', async (req, res, next) =>{
     try{
         const createdVideo = await db.Video.create(req.body);
         console.log(`Created video is ${createdVideo}`);
@@ -57,9 +57,9 @@ router.post('/video', async (req, res, next) =>{
 })
 router.delete('/:id', async (req, res, next)=>{
     try{
-        const currenttVideo = db.Video.findById(req.params.id);
+        const currentVideo = db.Video.findById(req.params.id);
         const deletedVideo = await db.Video.findByIdAndDelete(req.params.id)
-        const commentsToDelete = currenttVideo.comments;
+        const commentsToDelete = currentVideo.comments;
         for(let i of commentsToDelete){
             console.log(i);
             db.Video.findByIdAndDelete(i)
