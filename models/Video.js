@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+//Maybe add thumbnail?
 const videoSchema = new mongoose.Schema({
     title: {
         type: String,
