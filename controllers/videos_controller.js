@@ -11,7 +11,7 @@ router.get('/', async (req, res, next)=>{
         const context = {videos};
         console.log(videos);
         res.send('I made it');
-        return res.render('index.js', context);
+        return res.render('home.js', context);
     }
     catch(error){
         console.log(error);
@@ -64,6 +64,13 @@ router.delete('/:id', async (req, res, next)=>{
             console.log(i);
             db.Video.findByIdAndDelete(i)
         }
+        res.redirect('/videos')
+    }
+    catch(error){
+        console.log(error);
+        req.error = error;
+        return next();
     }
 })
+
 module.exports = router;
