@@ -20,7 +20,7 @@ app.use(methodOverride('_method'))
 
 app.use(express.urlencoded({ extended: false }))
 
-app.get('/', (request, response) => response.send('Server is up and running'))
+app.get('/', (request, response) => response.render('home.ejs'))
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
