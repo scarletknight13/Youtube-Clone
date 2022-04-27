@@ -51,9 +51,11 @@ li{
     padding: 10px 0;
 }
 
+
 .i{
     padding: 0px 30px;
     float:right;
+    
 }
 /* NavBar Youtube Logo Padding */
 
@@ -93,4 +95,19 @@ li{
 .sidebar_foot{
     font-size:.7rem;
     padding: 10px;
+}
+
+/* Artist Bar */
+#artistbio{
+    font-size: 1.2rem;
+    float: left;
+    text-align: left;
+}
+#views{
+    font-size:.8rem;
+}
+
+#views button{
+    padding: 0 20px;
+    text-align: right;
 }
