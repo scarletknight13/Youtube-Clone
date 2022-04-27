@@ -17,8 +17,13 @@ app.use(express.static('public'))
 
 app.use(methodOverride('_method'))
 
-
 app.use(express.urlencoded({ extended: false }))
+
+// app.use('/home', controllers.home);
+// app.use('/watch', controllers.watch);
+app.use('/results', controllers.results);
+// app.use('/channel', controllers.channel)
+
 
 app.get('/', (request, response) => response.send('Server is up and running'))
 
