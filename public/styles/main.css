@@ -6,7 +6,7 @@ body{
 
 /* Grid Container  */
 .item1 { grid-area: header; }
-.item2 { grid-area: menu; }
+.item2 { grid-area: menu;}
 .item3 { grid-area: main; }
 
 
@@ -54,8 +54,7 @@ li{
   padding: 0px 30px;
   float:right;
 }
-
-/* Test */
+/* NavBar Youtube Logo Padding */
 .test{
   float: left;
   font-family: 'League Gothic', sans-serif;
@@ -70,4 +69,17 @@ li{
 .glass{
   font-size: 2rem;
   
+}
+
+/* SideNav */
+.sidenav{
+  font-size: 1rem;
+  padding: 10px;
+  text-align: left;
+}
+
+.sidenav i{
+  padding-left: 15px;
+  float: left;
+  padding-right: 15px;
 }
