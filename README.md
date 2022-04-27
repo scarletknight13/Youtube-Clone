@@ -1,7 +1,7 @@
 # YouTube Clone
 ## Project Members
 - Cooper Stevens
-- Jayln Gomez
+- Jaylen Gomez
 - Jesse Broxton
 - Vireak Jonny San
 ## Project Description
