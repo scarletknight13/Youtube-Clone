@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/show.css">
+    <%-include('partials/links.ejs')%>
+    <%-include('partials/nav.ejs')%>
+</head>
+<body>
+    <div class="item3">
+        <div id="artistbio">
+            <div class="showVid">
+                <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/F9ldojZWBiM" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+               
+      
+            </div>
+            Artist Name - Video Title
+            <div id="views">
+                <p>1000 views <%=new Date().toLocaleDateString()%> 
+                 
+                        <button><i class=" fa-solid fa-thumbs-up"></i> 25k</button>
+                        <button><i class=" fa-solid fa-thumbs-down"></i>DISLIKE</button>
+                        <button><i class="fa-solid fa-share"></i>SHARE</button>
+                        <button><i class="fa-solid fa-download"></i>DOWNLOAD</button>
+                        <button><i class="fa-solid fa-scissors"></i>CLIP</button>
+                        <button><i class="fa-solid fa-plus"></i>SAVE</button>
+                        
+                    
+                   
+                
+                </p> 
+            
+            </div>
+            <hr>
+            <div id="videoabout">
+                <img class="profileimg"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder">
+                <h3>Artist               <i class="i fa-solid fa-bell"></i><span><button class="i">Subscribe</button></span></h3>
+                <p>14 subscribers</p>
+            </div>
+            <h5>Title Of Artist - Video </h5>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+          
+        </div>
+        <hr>
+        <div id="comment">
+            <span>Numberof Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
+        </div>
+        <br>
+        <div class="addcomment">
+
+            <img class="profileimg"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder">
+            <input type="text" name="comment" id="" placeholder="Add a comment...">
+            <br>
+            <div class="submit">
+
+                <input type="button" value="CANCEL">
+                <input type="submit" value="COMMENT" style="background-color: #F4F4F4">
+
+            </div>
+        
+        </div>
+      </div>  
+  </div>
+
+
+    
+</body>
+</html>
