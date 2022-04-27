@@ -60,7 +60,10 @@ router.delete('/:id', async (req, res, next)=>{
         const currenttVideo = db.Video.findById(req.params.id);
         const deletedVideo = await db.Video.findByIdAndDelete(req.params.id)
         const commentsToDelete = currenttVideo.comments;
-        for(let i of )
+        for(let i of commentsToDelete){
+            console.log(i);
+            db.Video.findByIdAndDelete(i)
+        }
     }
 })
 module.exports = router;
