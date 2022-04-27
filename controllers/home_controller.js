@@ -55,6 +55,22 @@ router.post('/', async (req, res, next) =>{
         return next();
     }
 })
-
+router.delete('/:id', async (req, res, next)=>{
+    try{
+        const currentVideo = db.Video.findById(req.params.id);
+        const deletedVideo = await db.Video.findByIdAndDelete(req.params.id)
+        const commentsToDelete = currentVideo.comments;
+        for(let i of commentsToDelete){
+            console.log(i);
+            db.Video.findByIdAndDelete(i)
+        }
+        res.redirect('/videos')
+    }
+    catch(error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 module.exports = router;
