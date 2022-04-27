@@ -29,7 +29,8 @@ router.post('/', async (req, res, next)=>{
         const isReply = req.body.isReply;
         if(isReply){
             const parentComment = await db.Comment.findById(req.body.parentId);
-            const newComment = await
+            delete req.body.parentId;
+            const newComment = await db.create(req.body);
         }
         else{
 
