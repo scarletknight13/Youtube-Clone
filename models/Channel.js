@@ -8,7 +8,7 @@ const channelSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        default: ""
+        default: "https://i.imgur.com/NsLWR0f.png"
     },
     subscribers: {
         type: Number,
