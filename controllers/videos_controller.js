@@ -10,8 +10,8 @@ router.get('/', async (req, res, next)=>{
         const videos = await db.Video.find({});
         const context = {videos};
         console.log(videos);
-        res.send('I made it');
-        return res.render('home.js', context);
+        // res.send('I made it');
+        return res.render('home.ejs', context);
     }
     catch(error){
         console.log(error);
