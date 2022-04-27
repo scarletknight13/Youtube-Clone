@@ -3,9 +3,11 @@ const mongoose = require('mongoose');
 const videoSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     videoData: {
+        //placeholder embed URL, eventually switch to file in database
         type: String,
         required: true
     },
@@ -27,10 +29,10 @@ const videoSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    comments: {
+    comments: [{
         type: mongoose.Types.ObjectId,
         ref: 'Comment'
-    }
+    }]
 }, 
     {timestamps: true}
 )
