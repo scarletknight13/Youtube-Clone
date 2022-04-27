@@ -17,10 +17,15 @@ app.use(express.static('public'))
 
 app.use(methodOverride('_method'))
 
-
 app.use(express.urlencoded({ extended: false }))
 
+
 app.get('/', (request, response) => response.render('home.ejs'))
+// app.use('/', controllers.home);
+// app.use('/watch', controllers.watch);
+app.use('/results', controllers.results);
+// app.use('/channel', controllers.channel)
+
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
