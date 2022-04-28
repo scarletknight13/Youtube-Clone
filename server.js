@@ -20,8 +20,8 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 
-app.get('/', (request, response) => response.render('home.ejs'))
-// app.use('/', controllers.home);
+app.get('/', (req, res) => res.redirect('/home'));
+app.use('/home', controllers.home);
 // app.use('/watch', controllers.watch);
 app.use('/results', controllers.results);
 // app.use('/channel', controllers.channel)

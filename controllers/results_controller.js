@@ -4,11 +4,12 @@ const router = express.Router()
 
 const db = require('../models');
 
+//Routes for /results/
 router.get('/', async (req, res, next)=>{
     try{
         const videos = await db.Video.find({});
         let search = req.query.search_query
-        let searchResult = require('../scripts/search_algorithm')(search, videos);
+        let searchResult = require('../routeScripts/searchAlgorithm')(search, videos);
         res.send(videos);
     }
     catch(error){
