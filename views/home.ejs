@@ -12,19 +12,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    <%-include('partials/nav.ejs') %>
+    <%-include('partials/header.ejs') %>
 </head>
 <body>
   <%-include('partials/sidenav.ejs')%>    
+  <!-- TODO: Export to tag partial -->
   <div class="tag-buttons">
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
   </div>
   <div class="main-content">
     <!-- TODO: Replace with a partial, containing context array of tags and EJS for loop -->
@@ -33,7 +36,7 @@
         <% for(let i = 0; i < videos.length; ++i) { %>
           <% const video = videos[i] %>
           <div class="video-card">
-            <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
+            <img class="thumbnail-image" src="<%=video.thumbnail%>" alt="<%=video.title%>">
             <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
           </div>
         <% } %>
