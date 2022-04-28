@@ -7,11 +7,10 @@ const db = require('../models');
 //Routes for /results/
 router.get('/', async (req, res, next)=>{
     try{
-        const searchTerms = req.query.search_query;
-        const sortedVideos = require('../scripts/searchAlgorithm')(searchTerms);
-        res.send(sortedVideos)
-        // context = {sortedVideos: sortedVideos}
-        // res.render('results.ejs', context)
+        const videos = await db.Video.find({});
+        let search = req.query.search_query
+        let searchResult = require('../routeScripts/searchAlgorithm')(search, videos);
+        res.send(videos);
     }
     catch(error){
         console.log(error);
