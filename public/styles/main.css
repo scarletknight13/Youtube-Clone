@@ -7,9 +7,9 @@ body{
 }
 
 /* Grid Container  */
-.item1 { grid-area: header; }
-.item2 { grid-area: menu;}
-.item3 { grid-area: main; }
+.nav-bar { grid-area: header; }
+.side-bar { grid-area: menu;}
+.main-content { grid-area: main; }
 
 
 .grid-container {
