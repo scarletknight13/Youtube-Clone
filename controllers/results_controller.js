@@ -4,29 +4,13 @@ const router = express.Router()
 
 const db = require('../models');
 
+//Routes for /results/
 router.get('/', async (req, res, next)=>{
     try{
-        const search = req.query.search_query;
-        let searchTags = search.split(' ');
-        const tagSet = new Set(searchTags)
-        const videos = await db.Video.find({})
-        videos.sort((a, b) =>{
-            let aTags = a.description.split(' ');
-            let bTags = b.description.split(' ');
-            let aMatches = 0;
-            let bMatches = 0;
-            for(let tag of aTags)
-                if(tagSet.has(tag))
-                    ++aMatches;
-            
-            for(let tag of bTags)
-                if(tagSet.has(tag))
-                    ++bMatches;
-            return bMatches - aMatches;
-        })
-        const context = {videos};
-
-        return res.render('results.ejs', context);
+        const videos = await db.Video.find({});
+        let search = req.query.search_query
+        let searchResult = require('../routeScripts/searchAlgorithm')(search, videos);
+        res.send(videos);
     }
     catch(error){
         console.log(error);

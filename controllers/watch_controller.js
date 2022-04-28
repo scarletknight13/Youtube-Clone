@@ -26,15 +26,20 @@ router.get('/:id', async (req, res, next)=>{
 
 router.post('/', async (req, res, next)=>{
     try{
-        const isReply = req.body.isReply;
+        const isReply = req.body.isReply == 'true';
+        delete req.body.isReply;
+        let parent;
         if(isReply){
-            const parentComment = await db.Comment.findById(req.body.parentId);
-            delete req.body.parentId;
-            const newComment = await db.create(req.body);
+            parent = await db.Comment.findById(req.body.parentId);
         }
+        else{
+            parent = await db.Comment.findById(req.body.parentId);
+        }
+        delete req.body.parentId;
+        const newComment = await db.create(req.body)
     }
     catch(error){
-        console.log(error)
+        console.log(error);
         req.error = error;
         next();
     }
