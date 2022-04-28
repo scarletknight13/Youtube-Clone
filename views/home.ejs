@@ -15,27 +15,25 @@
     <%-include('partials/nav.ejs') %>
 </head>
 <body>
-  <%-include('partials/sidenav.ejs')%>
+  <%-include('partials/sidenav.ejs')%>    
+  <div class="tag-buttons">
+    <button>Tag</button>
+    <button>Tag</button>
+    <button>Tag</button>
+    <button>Tag</button>
+    <button>Tag</button>
+    <button>Tag</button>
+    <button>Tag</button>
+    <button>Tag</button>
+  </div>
   <div class="main-content">
     <!-- TODO: Replace with a partial, containing context array of tags and EJS for loop -->
-    <div id="tagButton">
-      <button>Tag</button>
-      <button>Tag</button>
-      <button>Tag</button>
-      <button>Tag</button>
-      <button>Tag</button>
-      <button>Tag</button>
-      <button>Tag</button>
-      <button>Tag</button>
-    </div>
     <hr>
     <div class="list-of-videos">
-        <% for(let i = 0; i < 2; ++i) { %>
+        <% for(let i = 0; i < videos.length; ++i) { %>
           <% const video = videos[i] %>
           <div class="video-card">
-            <iframe width="420" height="315"
-              src="<%= video.videoData %>">
-            </iframe>
+            <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
             <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
           </div>
         <% } %>
