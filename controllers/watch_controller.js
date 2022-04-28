@@ -32,9 +32,11 @@ router.post('/', async (req, res, next)=>{
             delete req.body.parentId;
             const newComment = await db.create(req.body);
         }
-        else{
-
-        }
+    }
+    catch(error){
+        console.log(error)
+        req.error = error;
+        next();
     }
 })
 router.delete('/:id', async (req, res, next)=>{
