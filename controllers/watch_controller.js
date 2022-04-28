@@ -6,13 +6,13 @@ const db = require('../models');
  
 router.get('/:id', async (req, res, next)=>{
     try{
-        const currenttVideo = await db.Video.findById(req.params.id).populate('comments');
-        const comments = currenttVideo.comments;
+        const currentVideo = await db.Video.findById(req.params.id).populate('comments');
+        const comments = currentVideo.comments;
 
-        console.log(currenttVideo);
+        console.log(currentVideo);
         const context = {
             videoLink: currentVideo.videoData,
-            comments: currenttVideo.comments
+            comments: currentVideo.comments
         }
         return res.render('show.ejs', context);
         // res.send('The show route is up');
