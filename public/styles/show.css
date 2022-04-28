@@ -31,7 +31,7 @@ body{
 
 /* Search Bar */
 input,text{
-    width: 30vh;
+    width: 450px;
     font-size: 1.25rem;
 }
 .wrapper {
