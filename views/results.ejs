@@ -6,77 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
     <link rel="stylesheet" href="styles/results.css">
+    <!-- Stylesheet References -->
     <%-include('partials/links.ejs')%>
+    <!-- Nav Bar Reference -->
     <%-include('partials/nav.ejs')%>
 </head>
 <body>
+  <!-- Side bar Reference -->
     <%-include('partials/sidenav.ejs')%>
-
-    <div class="item3">
-
-        <div class="resultvids">
-          <p>
-              
-              <iframe width="420" height="315"
+    <div class="main-content">
+      <div class="video-results">
+        <% for (let i = 0; i < videos.length; i++) {%>
+          <% const video = videos[i] %>
+              <div class="video-card">
+              <!-- <iframe width="420" height="315"
               src="https://www.youtube.com/embed/tgbNymZ7vqY">
-              </iframe>
-               <span class="artistTitle">Artist: Title</span> 
-               <br>
-               2views <%=new Date().toLocaleDateString()%>
-               <br>
-               <br>
-               <p><img class= "profileimg" src="https://cdn.shopify.com/s/files/1/0518/7785/articles/Untitled_design-6.png?v=1609312268" alt="artist profile picture"></p> 
-               <p>Artist</p>
+              </iframe> -->
+              <span class="artistTitle">Artist: Title</span> 
+              <br>
+              2views <%=new Date().toLocaleDateString()%>
+              <br>
+              <br>
+              <p><img class= "profileimg" src="https://cdn.shopify.com/s/files/1/0518/7785/articles/Untitled_design-6.png?v=1609312268" alt="artist profile picture"></p> 
+              <p>Artist</p>
                 <br>
                 <p>Description Goes Here</p>
-          </p>
-          <br>
-          <br>
-          <br>
-          <br>
-          <p>
-              
-            <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY">
-            </iframe>
-             <span class="artistTitle">Artist: Title</span> 
-             <br>
-             2views <%=new Date().toLocaleDateString()%>
-             <br>
-             <br>
-             <p><img class= "profileimg" src="https://cdn.shopify.com/s/files/1/0518/7785/articles/Untitled_design-6.png?v=1609312268" alt="artist profile picture"></p> 
-             <p>Artist</p>
-              <br>
-              <p>Description Goes Here</p>
-        </p>
-
-        <br>
-          <br>
-          <br>
-          <br>
-          <p>
-              
-            <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY">
-            </iframe>
-             <span class="artistTitle">Artist: Title</span> 
-             <br>
-             2views <%=new Date().toLocaleDateString()%>
-             <br>
-             <br>
-             <p><img class= "profileimg" src="https://cdn.shopify.com/s/files/1/0518/7785/articles/Untitled_design-6.png?v=1609312268" alt="artist profile picture"></p> 
-             <p>Artist</p>
-              <br>
-              <p>Description Goes Here</p>
-        </p>
-
-
-     
-
-        
+            </div>     
+      </div>
     </div>
-    
-
-   
+    <% } %>
 </body>
 </html>

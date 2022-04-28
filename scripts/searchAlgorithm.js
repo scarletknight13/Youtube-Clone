@@ -2,7 +2,7 @@
     let searchTags = search.toLowerCase().split(' ');
     const tagSet = new Set(searchTags)
     console.log(searchTags);
-    videos.sort((a, b) =>{
+    const sortedVideos = videos.sort((a, b) => {
         let aTags = new Set(a.description.toLowerCase().split(' '));
         let bTags = new Set(b.description.toLowerCase().split(' '));
         let aMatches = 0;
@@ -16,5 +16,8 @@
                 ++bMatches;
         return bMatches - aMatches;
     })
+    return sortedVideos;
 }
+
+
 module.exports = sortByRevealance;

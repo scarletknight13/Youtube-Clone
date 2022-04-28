@@ -6,14 +6,7 @@ body{
     color:#282828;
 }
 
-/* Grid Container  */
-.item1 { grid-area: header; }
-.item2 { grid-area: menu;}
-.item3 { grid-area: main;}
-.item4 {grid-area: side;}
-
-
-.grid-container {
+.nav-grid-container {
   display: grid;
   grid-template-areas:
     'header header header header header header'
@@ -22,8 +15,15 @@ body{
   gap: 20px;
   padding: 10px;
 }
+/* Grid Container  */
+.nav-bar { grid-area: header; }
+.side-bar { grid-area: menu;}
+.main-content { grid-area: main;}
+/* .item4 {grid-area: side;} */
 
-.grid-container > div {
+
+
+.nav-grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
@@ -114,16 +114,19 @@ li{
 
 iframe{
     float: left;
-    
 }
 
 
-.resultvids{
+.video-results{
     text-align: left;
-}
-
-.resultvids p{
     font-size: .8rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+.video-card {
+    display: inline-block;
+    height: 200px;
 }
 
 .artistTitle{
