@@ -1,0 +1,14 @@
+/* Tags is the parent class for filter tags on the main page. */
+.tag-buttons {
+    background-color:#F4F4F4;
+    color:#6d6d6d;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 16px;
+}
+.tag:hover{
+    background-color:#e0e0e0;
+  }
+  
