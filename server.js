@@ -26,6 +26,4 @@ app.use('/watch', controllers.watch);
 app.use('/results', controllers.results);
 // app.use('/channel', controllers.channel)
 
-
-
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
