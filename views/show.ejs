@@ -38,13 +38,22 @@
             </div>
             <hr>
             <div class="video-description">
-                <img src="<%=videoLink.thumbnail%>" alt="Artist Profile Picture">
+                <img class ="profile-img"src="<%=videoLink.thumbnail%>" alt="Artist Profile Picture">
                 <h3>Artist<span><button class="i">Subscribe</button></span></h3>
                 <p>Subscribers</p>
+                <p><%=videoLink.description%></p>
             </div>
+            <hr>
             <div class="video-comments">
-                Comments go here
+                <span><%=videoLink.comments.length+1%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
+                    <%for(let i = 0; i < allComments.length; i++) {%>
+                    <div class="comments">
+                        <%=allComments[i].textContent%>
+                    </div>
+                    <%}%>
             </div>
+            <br>
+          
         </div>
         
 
@@ -54,10 +63,9 @@
                 <button>tag</button>
             </div>
             <%for(let i = 0; i< 10; i++){%>
-                <img src="<%=videos[i].thumbnail%>" alt="<%=videos[i].title%>">
-                <a class="video-title" href="/watch/<%=videos[i]._id%>"><%= videos[i].title %></a>
+                <p><a class="video-title" href="/watch/<%=videos[i]._id%>"><img src="<%=videos[i].thumbnail%>" alt="<%=videos[i].title%>"><%= videos[i].title %></a></p>
            <% }%>
-            tags and side videos go here
+
         </div>
         
         

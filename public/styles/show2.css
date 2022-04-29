@@ -13,7 +13,7 @@
       
   }
 
-  .video-description img{
+  .profile-img{
     aspect-ratio: 1;
     width: 50px;
     border-radius: 50%;
@@ -21,12 +21,17 @@
     padding-right: 10px;
   }
 
-  .video-comments{
-     
+  .video-comments span{
+     padding-right: 15px;
   }
 
   .i{
     padding: 0px 30px;
     float:right;
+    
+}
+
+.side-video-playlist{
+    float: left;
     
 }

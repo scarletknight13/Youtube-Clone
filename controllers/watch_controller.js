@@ -11,12 +11,14 @@ router.get('/:id', async (req, res, next)=>{
         const currentVideo = await db.Video.findById(req.params.id).populate('comments');
         const allVideo = await db.Video.find({});
         const comments = currentVideo.comments;
+       
 
         console.log(currentVideo);
         const context = {
             videoLink: currentVideo,
             videos: allVideo,
-            comments: currentVideo
+            allComments: comments,
+           
         }
         return res.render('show.ejs', context);
         // res.send('The show route is up');
