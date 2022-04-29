@@ -87,6 +87,7 @@ li{
       height: 100vh;
       margin: 2em;
       gap: 20px;
+     max-width: fit-content;
   }
 
 
