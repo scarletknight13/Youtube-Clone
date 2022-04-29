@@ -25,16 +25,28 @@
     <button>Tag</button>
     <button>Tag</button>
     <button>Tag</button>
+    <hr>
   </div>
   <div class="main-content">
     <!-- TODO: Replace with a partial, containing context array of tags and EJS for loop -->
-    <hr>
+    
     <div class="list-of-videos">
-        <% for(let i = 0; i < videos.length; ++i) { %>
+        <% for(let i = 0; i < 24; ++i) { %>
           <% const video = videos[i] %>
           <div class="video-card">
-            <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
-            <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
+            <div class="img-container">
+              <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
+            </div>
+            <div class="vid-info">
+            <div class="pfp"></div>
+                <div class="text-info">
+                  <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
+                  <br>
+                  <p1> Mr Beast  </p1>
+                  <br>
+                  <p2> 1.6M views • 2 Days Ago </p2>
+                </div>
+            </div>
           </div>
         <% } %>
       </div>
