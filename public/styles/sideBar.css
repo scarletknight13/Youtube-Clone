@@ -1,0 +1,39 @@
+
+.sidenav {
+    font-size: 1rem;
+    /* padding: 10px; */
+    text-align: left;
+    width: 15.5vw;
+}
+
+.sidenav li:hover {
+    background-color: #F4F4F4;
+}
+
+.sidenav i {
+    padding-left: 15px;
+    float: left;
+    padding-right: 15px;
+}
+
+.sidebar_foot{
+    font-size:.7rem;
+    padding: 10px;
+}
+
+.test{
+    float: left;
+    font-family: 'League Gothic', sans-serif;
+}
+  
+.fa-bars{
+    padding: 0 25px;
+}
+  
+.glass{
+    font-size: 2rem;
+    
+}
+.copyright{
+    font-size: .7rem;
+}
