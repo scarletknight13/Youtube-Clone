@@ -6,15 +6,16 @@ const db = require('../models');
  
 router.get('/:id', async (req, res, next)=>{
     try{
-        const currentVideo = await db.Video.findById(req.params.id).populate('comments');
+        const currentVideo = await db.Video.findById(req.params.id).populate('comments').populate('channel');
         const comments = currentVideo.comments;
-
+        const allvideos = await db.Video.find({})
         const context = {
-            videoLink: currentVideo.videoData,
+            currentVideo: currentVideo,
             comments: currentVideo.comments,
-            videoId: currentVideo._id
+            videoId: currentVideo._id,
+            allVideos: allvideos
         }
-        return res.render('show.ejs', context);
+        return res.render('showAlt.ejs', context);
         // res.send('The show route is up');
     }
     catch(error){
@@ -39,7 +40,16 @@ router.post('/:id', async (req, res, next)=>{
         }
         const newComment = await db.Comment.create(req.body)
         if(isReply){
-            parent.replies.push(newComment._id);
+            let newComments = parent.replies;
+            newComments.push(newComment._id)
+            db.Comment.findByIdAndUpdate(parentId, {
+                replies: newComments,
+            }, 
+            (error, updatedComment)=>{
+                if(error){
+                    console.log(error);
+                }
+            })
         }
         else{
             let newComments = parent.comments;
@@ -51,13 +61,9 @@ router.post('/:id', async (req, res, next)=>{
                 if(error){
                     console.log(error);
                 }
-                else{
-                    console.log(updatedVid)
-                }
-            }
-            )
+            })
         }
-        res.send(parent)
+        res.redirect(`/watch/${req.body.videoId}`)
     }
     catch(error){
         console.log(error);
@@ -69,19 +75,9 @@ router.delete('/:id', async (req, res, next)=>{
     try{
         const id = req.params.id;
         const currentComment = await db.Comment.findByIdAndDelete(id);
-        const parentId = req.body.parentId;
         const videoId = req.body.videoId;
         delete req.body.isReply;
-        console.log()
-        if(parentId == videoId){
-            console.log()
-            let found = await db.Video.findById(parentId).comments.find(element => element === videoId)
-        }
-        else{
-            let found = await db.Comment.findById(parentId).replies.find(ele)
-            found
-        }
-        res.redirect(`/watch/${req.params.id}`);
+        res.redirect(`/watch/${req.body.videoId}`);
 
     }
     catch(error){
