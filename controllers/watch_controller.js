@@ -19,7 +19,7 @@ router.get('/:id', async (req, res, next)=>{
             videoId: currentVideo._id,
             allVideos: allvideos
         }
-        return res.render('showAlt.ejs', context);
+        return res.render('show.ejs', context);
         // res.send('The show route is up');
     }
     catch(error){

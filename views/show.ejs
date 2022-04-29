@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=videoLink.title%></title>
+    <title><%=currentVideo.title%></title>
     <link rel="stylesheet" href="/styles/show.css">
     <%-include('partials/links.ejs')%>
     <%-include('partials/header.ejs')%>
@@ -14,18 +14,17 @@
         
         <div class="main-video-section">
             <div class="current-video">
-                <iframe width="1000px" height="550px" src="<%=videoLink.videoData%>" 
-
+                <iframe width="1000px" height="550px" src="<%=currentVideo.videoData%>" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
                 
-                <%=videoLink.channel.name%> - <%=videoLink.title%>
+                <%=currentVideo.channel.name%> - <%=currentVideo.title%>
             </div>
             <div class="video-title-likes">
-                <p><%=videoLink.views%> views <%=new Date().toLocaleDateString()%> 
+                <p><%=currentVideo.views%> views <%=new Date().toLocaleDateString()%> 
                  
-                    <button><i class=" fa-solid fa-thumbs-up"></i> <%=videoLink.likes%></button>
+                    <button><i class=" fa-solid fa-thumbs-up"></i> <%=currentVideo.likes%></button>
                     <button><i class=" fa-solid fa-thumbs-down"></i>DISLIKE</button>
                     <button><i class="fa-solid fa-share"></i>SHARE</button>
                     <button><i class="fa-solid fa-download"></i>DOWNLOAD</button>
@@ -38,20 +37,49 @@
                 </p> 
             </div>
             <hr>
-            <div class="video-description">
-                <img class ="profile-img"src="<%=videoLink.thumbnail%>" alt="Artist Profile Picture">
-                <h3>Artist<span><button class="i">Subscribe</button></span></h3>
-                <p>Subscribers</p>
-                <p><%=videoLink.description%></p>
+            <div class="video-description-grid">
+
+                <div class="video-description">
+                    <img class ="profile-img"src="<%=currentVideo.thumbnail%>" alt="Artist Profile Picture">
+                    <h3> <%=currentVideo.channel.name%><span><button class="i subscribe">Subscribe</button></span></h3>
+                    <p><%=currentVideo.channel.subscribers%> Subscribers</p>
+                    <p><%=currentVideo.description%></p>
+                </div>
+                
             </div>
-            
             <hr>
             <div class="video-comments">
-                <span><%=videoLink.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
-                    <%for(let i = 0; i < allComments.length; i++) {%>
+
+                <form class="add-comments" method="POST" action="/watch/<%=currentVideo._id %>">
+                    <input type="hidden" name="isReply" value="false">
+                    <input type="hidden" name="channel" value="626957058e1967faf6148714">
+                    <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                    <input type="text" name="textContent" id="" placeholder="Add a comment...">
+                    <input class="comment-button" type="submit" value="COMMENT">
+                </form>
+
+
+                <span><%=currentVideo.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
+                    <%for(let i = 0; i < currentVideo.comments.length; i++) {%>
+                        <% const comment = currentVideo.comments[i] %>
                     <div class="comments">
                         
-                        <p><img class="profile-img"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder"><%=allComments[i].textContent%></p>
+                        <p><img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder"><%=comment.textContent%></p>
+                        <div class="edit-delete">
+
+                            <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
+                                <input type="text" name="textContent" value="<%= comment.textContent %>">
+                                <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                                <input class="edit-button" type="submit" value="Edit">
+    
+                            </form>
+                            <form class="delete" method="POST" action="/watch/<%= comment._id %>?_method=DELETE">
+                                <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                                <input class="delete-button" type="submit" value="X">
+                            </form>
+                        </div>
+                       
+                        
                         
                     </div>
                     <br>
@@ -61,6 +89,8 @@
           
         </div>
         
+
+        
         <div class="side-video-playlist">
             <div class="tags">
                 <button class="tag-button">Cars</button>
@@ -69,7 +99,7 @@
                 <button class="tag-button">Money</button>
             </div>
             <%for(let i = 0; i< 10; i++){%>
-                <p><a class="video-title" href="/watch/<%=videos[i]._id%>"><img src="<%=videos[i].thumbnail%>" alt="<%=videos[i].title%>"><%= videos[i].title %></a></p>
+                <p><a class="video-title" href="/watch/<%=allVideos[i]._id%>"><img src="<%=allVideos[i].thumbnail%>" alt="<%=allVideos[i].title%>"><%= allVideos[i].title %></a></p>
            <% }%>
 
         </div>

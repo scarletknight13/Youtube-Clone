@@ -132,3 +132,44 @@ li{
     background-color:#e0e0e0;
   }
   
+.comment-button,.subscribe{
+  background-color:#0091ea ;
+  color:white;
+  margin: 0 15px;
+  width: 150px;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.subscribe{
+  background-color: #FF0000;
+}
+
+.delete-button{
+  background-color: #FF0000;
+  color: #e0e0e0;
+  border-radius: 50%;
+  width: 25px;
+}
+.edit-button{
+  background-color: #808080;
+  color: #e0e0e0;
+  width: 40px;
+}
+
+.edit-delete input text{
+  opacity: 1;
+}
+
+.edit-delete input{
+  float: right;
+}
+
+.comments{
+  display: grid;
+  grid-template-columns:2fr 1fr;
+  
+}
