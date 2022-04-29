@@ -10,7 +10,7 @@
     <%-include('partials/nav.ejs')%>
 </head>
 <body>
-    <div class="grid-container">
+    <div class="grid-container-video">
         
         <div class="main-video-section">
             <div class="current-video">
@@ -64,7 +64,11 @@
         
         <div class="side-video-playlist">
             <div class="tags">
-                <button>tag</button>
+                <button class="tag-button">tag</button>
+                <button class="tag-button">tag</button>
+                <button class="tag-button">tag</button>
+                <button class="tag-button">tag</button>
+                <button class="tag-button">tag</button>
             </div>
             <%for(let i = 0; i< 10; i++){%>
                 <p><a class="video-title" href="/watch/<%=videos[i]._id%>"><img src="<%=videos[i].thumbnail%>" alt="<%=videos[i].title%>"><%= videos[i].title %></a></p>
