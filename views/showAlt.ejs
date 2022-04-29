@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/showAlt.css">
+    <%-include('partials/links.ejs')%>
+</head>
+<body>
+    
+    <nav class="header">
+        <div class="search-bar">
+            <form class="search-bar-form" method="GET" action="/results">
+                <input type="text" id="search_query" name="search_query" placeholder="Search"> 
+                <button><i class="glass fa-solid fa-magnifying-glass"></i></button> 
+            </form>
+        </div>
+        <i class="fa-solid fa-microphone"></i>
+        <div class="nav-icons">
+            <i class="i fa-solid fa-user"></i>
+            <i class="i fa-solid fa-bell"></i>
+            <i class="i fa-solid fa-grip"></i>
+            <i class="i fa-solid fa-video"></i>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="video-info">
+            <iframe width="900px" height="550px" src="<%= currentVideo.videoData %>" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <div class="video-title">
+                <h1><%= currentVideo.title %></h1>
+            </div>
+            <!-- <div class="video-description">
+                <div class="channel-info">
+                    <img class="" src="<%= currentVideo.channel.image %>" alt="">
+                    <h3><%= currentVideo.channel.name %></h3>
+                </div>
+            </div> -->
+            <form method="POST" action="/watch/<%=currentVideo._id %>">
+                <input type="hidden" name="isReply" value="false">
+                <input type="hidden" name="channel" value="626957058e1967faf6148714">
+                <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                <input type="text" name="textContent" id="" placeholder="Add a comment...">
+                <input type="submit" value="COMMENT" style="background-color: #F4F4F4">
+            </form>
+            <% for(let i = 0; i < currentVideo.comments.length; ++i){ %>
+                <% const comment = currentVideo.comments[i] %>
+                <div class="comments">
+                    <h3>User</h3>
+                    <p><%= comment.textContent %></p>
+                    <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
+                        <input type="text" name="textContent" value="<%= comment.textContent %>">
+                        <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                        <input type="submit" value="Edit">
+                    </form>
+                    <form class="delete" method="POST" action="/watch/<%= comment._id %>?_method=DELETE">
+                        <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                        <input type="submit" value="Delete">
+                    </form>
+                </div>
+                <% for(let i = 0; i < comment.replies.length; ++i){ %>
+                    <% const reply = comment.replies[i] %>
+                        <div class="replies">
+                            <h4>User Replier</h4>
+                            <p><%= reply.textContent %></p>
+                            <form class="delete" method="POST" action="/watch/<%= reply._id %>?_method=DELETE">
+                                <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </div>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="related-videos">
+            <% for(let i = 0; i < allVideos.length; ++i) { %>
+                <% const video = allVideos[i] %> 
+                <div class="related-video-card">
+                    <img class="related-video-thumbnail" src="<%= video.thumbnail %>" alt="">
+                    <div class="related-video-card-info">
+                        <h6><%= video.title %></h6>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+</body>
+</html>

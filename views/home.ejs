@@ -31,19 +31,28 @@
   </div>
   <div class="main-content">
     <!-- TODO: Replace with a partial, containing context array of tags and EJS for loop -->
-    <hr>
     <div class="list-of-videos">
-        <% for(let i = 0; i < videos.length; ++i) { %>
-          <% const video = videos[i] %>
-          <div class="video-card">
-            <img class="thumbnail-image" src="<%=video.thumbnail%>" alt="<%=video.title%>">
-            <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
-          </div>
-        <% } %>
-      </div>
-    
-    
-    </div>  
+        <% for(let i = 0; i < 24; ++i) { %>
+            <% const video = videos[i] %>
+                <div class="video-card">
+                    <div class="img-container">
+                    <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
+                    </div>
+                    <div class="vid-info">
+                    <img class="pfp" src="<%=video.channel.image%>" alt="Channel Profile Image">
+                    </div>
+                    <!-- <div class="pfp"></div> -->
+                    <div class="text-info">
+                        <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
+                        <br>
+                        <p1><%= video.channel.name %></p1>
+                        <br>
+                        <p2> <%= video.views %> • <%= video.createdAt %> </p2>
+                    </div>
+                </div>
+            <% } %>
+    </div>
+  </div>  
 
 </body>
 </html>
