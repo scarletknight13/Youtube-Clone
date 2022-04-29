@@ -71,10 +71,13 @@
                 <span class="comment-length"><%=currentVideo.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
                     <%for(let i = 0; i < currentVideo.comments.length; i++) {%>
                         <% const comment = currentVideo.comments[i] %>
-                    <div class="comments">
                         
+                        
+                    <div class="comments">
+                            
                         <p><img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder"><%=comment.textContent%></p>
-                        <div class="edit-delete">
+                        <button class="edit-pin"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <div class="edit-delete hidden">
 
                             <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
                                 <input type="text" name="textContent" value="<%= comment.textContent %>">

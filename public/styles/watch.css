@@ -148,6 +148,12 @@ li{
 
 }
 
+.edit-pin{
+  float: right;
+  cursor: pointer;
+  
+}
+
 .delete-button{
   background-color: #FF0000;
   color: #e0e0e0;
