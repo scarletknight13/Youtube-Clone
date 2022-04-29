@@ -10,7 +10,7 @@
   }
 
   .main-video-section{
-      
+      max-width: 1000px;
   }
 
   .profile-img{
@@ -33,5 +33,6 @@
 
 .side-video-playlist{
     float: left;
+    max-width: 480px;
     
 }

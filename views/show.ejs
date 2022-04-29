@@ -18,7 +18,7 @@
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
-               
+                
                 <%=videoLink.channel.name%> - <%=videoLink.title%>
             </div>
             <div class="video-title-likes">
@@ -43,13 +43,17 @@
                 <p>Subscribers</p>
                 <p><%=videoLink.description%></p>
             </div>
+            
             <hr>
             <div class="video-comments">
-                <span><%=videoLink.comments.length+1%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
+                <span><%=videoLink.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
                     <%for(let i = 0; i < allComments.length; i++) {%>
                     <div class="comments">
-                        <%=allComments[i].textContent%>
+                        
+                        <p><img class="profile-img"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder"><%=allComments[i].textContent%></p>
+                        
                     </div>
+                    <br>
                     <%}%>
             </div>
             <br>
