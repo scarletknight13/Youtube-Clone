@@ -46,10 +46,18 @@ router.post('/:id', async (req, res, next)=>{
             newComments.push(newComment._id)
             db.Video.findByIdAndUpdate(parentId, {
                 comments: newComments,
-            })
-            console.log(parent);
+            }, 
+            (error, updatedVid)=>{
+                if(error){
+                    console.log(error);
+                }
+                else{
+                    console.log(updatedVid)
+                }
+            }
+            )
         }
-        res.redirect(`/watch/${parentId}`)
+        res.send(parent)
     }
     catch(error){
         console.log(error);
