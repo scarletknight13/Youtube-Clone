@@ -11,7 +11,10 @@ router.get('/:id', async (req, res, next)=>{
      //grab all videos first, which is an array
      //array.find that array by the video with ID req.params.id
         const currentVideo = await db.Video.findById(req.params.id).populate('comments').populate('channel');
-        const comments = currentVideo.comments;
+        const comments = currentVideo.comments
+        comments.forEach(element => {
+            element.populate('replies')
+        });
         const allvideos = await db.Video.find({})
         const context = {
             currentVideo: currentVideo,
@@ -19,7 +22,7 @@ router.get('/:id', async (req, res, next)=>{
             videoId: currentVideo._id,
             allVideos: allvideos
         }
-        return res.render('showAlt.ejs', context);
+        return res.render('show.ejs', context);
         // res.send('The show route is up');
     }
     catch(error){
