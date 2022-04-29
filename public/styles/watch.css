@@ -22,46 +22,9 @@ body{
    max-width: fit-content;
 }
 
-/* Grid Container  */
-.item1 { grid-area: header; }
-.item2 { grid-area: menu;}
-.item3 { grid-area: main; }
 
 
-/* .grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'main main main main main main'
-    'footer footer footer footer footer footer';
-  gap: 20px;
-  padding: 10px;
-}
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-} */
-
-
-/* Search Bar */
-input,text{
-    width: 450px;
-    font-size: 1.25rem;
-}
-.wrapper {
-    border:1px solid #000;
-    display:inline-block;
-}
-
-
-input,
-button {
-    background-color:transparent;
-    border:0;
-}
 
 
 /* List Style */
@@ -77,23 +40,6 @@ li{
     
 }
 
-/* NavBar Youtube Logo Padding */
-
-.test{
-    float: left;
-    font-family: 'League Gothic', sans-serif;
-    
-    
-}
-
-.fa-bars{
-    padding: 0 25px;
-}
-
-.glass{
-    font-size: 2rem;
-    
-}
 
 /* Grid Work Video Section */
   .grid-container-video{
@@ -122,9 +68,7 @@ li{
     padding-right: 10px;
   }
 
-  .video-comments span{
-     padding-right: 15px;
-  }
+
 
 
 .side-video-playlist{
@@ -134,6 +78,36 @@ li{
     
 }
 
+
+.video-description-grid{
+  display: grid;
+  grid-template-columns: .5fr 2fr;
+  grid-template-rows: .4fr 1fr;
+  grid-template-areas: 
+  'profile subscribed'
+  'description description'
+  ;
+}
+.video-description{
+  grid-area: profile;
+  text-align: center;
+  padding-bottom: 0px;
+  
+  
+}
+.video-description image{
+  float: left;
+  
+}
+.subscribe-button{
+  grid-area: subscribed;
+}
+.description{
+  grid-area: description;
+}
+
+
+/* Buttons */
 .tag-button{
     background-color:#F4F4F4;
     color:#808080;
@@ -150,6 +124,7 @@ li{
     background-color:#e0e0e0;
   }
   
+
 .comment-button,.subscribe{
   background-color:#0091ea ;
   color:white;
@@ -158,12 +133,19 @@ li{
   padding: 12px 12px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
+  float: right;
 }
+
+
+.hidden{
+  display: none;
+}
+
 
 .subscribe{
   background-color: #FF0000;
+
 }
 
 .delete-button{
@@ -194,4 +176,8 @@ li{
 
 .sidenav{
   grid-area: header;
+}
+
+.comment-length{
+  text-indent: 50px;
 }

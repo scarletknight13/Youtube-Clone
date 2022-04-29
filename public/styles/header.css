@@ -1,0 +1,41 @@
+/* .header {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "search-bar nav-icons";
+    background-color: red;
+    } */
+    
+    .test{
+        float: left;
+        font-family: 'League Gothic', sans-serif;
+        
+        
+    }
+    
+    .fa-bars{
+        padding: 0 25px;
+    }
+    
+    .glass{
+        font-size: 2rem;
+        
+    }
+
+    input,text{
+        width: 450px;
+        font-size: 1.25rem;
+    }
+    .wrapper {
+        border:1px solid #000;
+        display:inline-block;
+    }
+    
+    
+    input,
+    button {
+        background-color:transparent;
+        border:0;
+    }
+    

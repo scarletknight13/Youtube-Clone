@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=currentVideo.title%></title>
     <link rel="stylesheet" href="/styles/watch.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/watch.js"defer></script>
     <%-include('partials/links.ejs')%>
     <%-include('partials/header.ejs')%>
 </head>
@@ -41,11 +43,18 @@
 
                 <div class="video-description">
                     <img class ="profile-img"src="<%=currentVideo.thumbnail%>" alt="Artist Profile Picture">
-                    <h3> <%=currentVideo.channel.name%><span><button class="i subscribe">Subscribe</button></span></h3>
+                    <h3> <%=currentVideo.channel.name%></h3>
                     <p><%=currentVideo.channel.subscribers%> Subscribers</p>
-                    <p><%=currentVideo.description%></p>
                 </div>
+                <div class="subscribe-button">
+                    
+                    <button class="subscribe">Subscribe</button>
+                </div>
+                <div class="description">
+
+                    <p><%=currentVideo.description%></p>
                 
+                </div>
             </div>
             <hr>
             <div class="video-comments">
@@ -54,12 +63,12 @@
                     <input type="hidden" name="isReply" value="false">
                     <input type="hidden" name="channel" value="626957058e1967faf6148714">
                     <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
-                    <input type="text" name="textContent" id="" placeholder="Add a comment...">
-                    <input class="comment-button" type="submit" value="COMMENT">
+                    <input type="text" name="textContent" id="addingcomment" placeholder="Add a comment...">
+                    <input class="comment-button hidden" type="submit" value="COMMENT">
                 </form>
 
 
-                <span><%=currentVideo.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
+                <span class="comment-length"><%=currentVideo.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
                     <%for(let i = 0; i < currentVideo.comments.length; i++) {%>
                         <% const comment = currentVideo.comments[i] %>
                     <div class="comments">
