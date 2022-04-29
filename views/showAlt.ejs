@@ -52,6 +52,11 @@
                 <div class="comments">
                     <h3>User</h3>
                     <p><%= comment.textContent %></p>
+                    <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
+                        <input type="text" name="textContent" value="<%= comment.textContent %>">
+                        <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                        <input type="submit" value="Edit">
+                    </form>
                     <form class="delete" method="POST" action="/watch/<%= comment._id %>?_method=DELETE">
                         <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
                         <input type="submit" value="Delete">

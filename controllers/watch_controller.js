@@ -86,4 +86,23 @@ router.delete('/:id', async (req, res, next)=>{
         return next();
     }
 })
+router.put('/:id', async(req, res, next) =>{
+    try{
+        const id = req.params.id;
+        const comment = db.Comment.findByIdAndUpdate(id, {
+            textContent: req.body.textContent
+        },
+        (error, updatedComment) => {
+            if(error){
+                console.log(error)
+            }
+        })
+    }
+    catch(error){
+        console.log(error);
+        req.error = error;
+        next();
+    }
+    res.redirect(`/watch/${req.body.videoId}`);
+})
 module.exports = router;
