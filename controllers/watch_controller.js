@@ -6,6 +6,8 @@ const db = require('../models');
  
 router.get('/:id', async (req, res, next)=>{
     try{
+     //grab all videos first, which is an array
+     //array.find that array by the video with ID req.params.id
         const currentVideo = await db.Video.findById(req.params.id).populate('comments').populate('channel');
         const comments = currentVideo.comments;
         const allvideos = await db.Video.find({})
