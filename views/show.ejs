@@ -13,7 +13,7 @@
     <div class="item3">
         <div id="artistbio">
             <div class="showVid">
-                <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/F9ldojZWBiM" 
+                <iframe width="1000px" height="550px" src="<%= videoLink %>" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
@@ -63,14 +63,15 @@
         <div class="addcomment">
 
             <img class="profileimg"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder">
-            <input type="text" name="comment" id="" placeholder="Add a comment...">
             <br>
-            <div class="submit">
-
-                <input type="button" value="CANCEL">
+            <form method="POST" action="/watch/<%=videoId %>">
+                
+                <input type="text" name="textContent" id="" placeholder="Add a comment...">
+                <input type="hidden" name="isReply" value="false">
+                <input type="hidden" name="channel" value="626957058e1967faf6148714">
                 <input type="submit" value="COMMENT" style="background-color: #F4F4F4">
 
-            </div>
+            </form>
         
         </div>
       </div>  

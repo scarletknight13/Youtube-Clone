@@ -1,0 +1,34 @@
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    background-color: blue;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.video-info{
+    background-color: aqua;
+    width: 60%;
+
+}
+.related-videos{
+    background-color: blueviolet;
+    width: 32%;
+}
+.video-info, .related-videos{
+    height: 100%;
+}
