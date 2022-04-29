@@ -184,11 +184,16 @@ img{
   width: 45px;
   background-color: red;
   float: left;
-  margin-right: 5px;
+  margin:auto;
+  border-radius: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  margin-top: 9px;
+  position: relative;
 }
  .vid-info{
   float: left;
   margin-top: 5px;
+  position: relative;
   /* display: inline-block; */
  }
 
@@ -202,3 +207,8 @@ p2 {
   color: rgb(77, 77, 77);
 }
  
+.video-title { 
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+}
+
