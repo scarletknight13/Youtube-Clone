@@ -13,16 +13,16 @@
     <div class="item3">
         <div id="artistbio">
             <div class="showVid">
-                <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/F9ldojZWBiM" 
+                <iframe width="1000px" height="550px" src="<%=videoLink.videoData%>" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
                
       
             </div>
-            Artist Name - Video Title
+           <%=videoLink.channel.name%> - <%=videoLink.title%>
             <div id="views">
-                <p>1000 views <%=new Date().toLocaleDateString()%> 
+                <p><%=videoLink.views%> <%=new Date().toLocaleDateString()%> 
                  
                         <button><i class=" fa-solid fa-thumbs-up"></i> 25k</button>
                         <button><i class=" fa-solid fa-thumbs-down"></i>DISLIKE</button>

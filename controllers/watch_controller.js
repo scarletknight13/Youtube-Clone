@@ -11,8 +11,8 @@ router.get('/:id', async (req, res, next)=>{
 
         console.log(currentVideo);
         const context = {
-            videoLink: currentVideo.videoData,
-            comments: currentVideo.comments
+            videoLink: currentVideo,
+            comments: currentVideo
         }
         return res.render('show.ejs', context);
         // res.send('The show route is up');
