@@ -12,47 +12,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    <%-include('partials/nav.ejs') %>
+    <%-include('partials/header.ejs') %>
 </head>
 <body>
   <%-include('partials/sidenav.ejs')%>    
+  <!-- TODO: Export to tag partial -->
   <div class="tag-buttons">
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <button>Tag</button>
-    <hr>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
+      <div class="tag">Tag</div>
   </div>
   <div class="main-content">
     <!-- TODO: Replace with a partial, containing context array of tags and EJS for loop -->
-    
     <div class="list-of-videos">
         <% for(let i = 0; i < 24; ++i) { %>
-          <% const video = videos[i] %>
-          <div class="video-card">
-            <div class="img-container">
-              <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
-            </div>
-            <div class="vid-info">
-            <div class="pfp"></div>
-                <div class="text-info">
-                  <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
-                  <br>
-                  <p1> Mr Beast  </p1>
-                  <br>
-                  <p2> 1.6M views • 2 Days Ago </p2>
+            <% const video = videos[i] %>
+                <div class="video-card">
+                    <div class="img-container">
+                    <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
+                    </div>
+                    <div class="vid-info">
+                    <img class="pfp" src="<%=video.channel.image%>" alt="Channel Profile Image">
+                    </div>
+                    <!-- <div class="pfp"></div> -->
+                    <div class="text-info">
+                        <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
+                        <br>
+                        <p1><%= video.channel.name %></p1>
+                        <br>
+                        <p2> <%= video.views %> • <%= video.createdAt %> </p2>
+                    </div>
                 </div>
-            </div>
-          </div>
-        <% } %>
-      </div>
-    
-    
-    </div>  
+            <% } %>
+    </div>
+  </div>  
 
 </body>
 </html>

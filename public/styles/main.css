@@ -58,7 +58,21 @@ input,text{
   /* display:inline-block; */
 }
 
-
+.list-of-videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+.video-card {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.thumbnail-image {
+  width: 100px;
+  height: 100px;
+}
 input,
 button {
   background-color:transparent;
@@ -123,19 +137,17 @@ li{
 }
 
 /* Tag Button */
-.tag-buttons button{
+.tag-buttons {
   background-color:#F4F4F4;
-  color:#808080;
-  margin: 0 15px;
-  padding: 12px 12px;
-  text-align: center;
+  color:#6d6d6d;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
   font-size: 16px;
-  border-radius: 50%
 }
 
-.tag-buttons button:hover{
+.tag:hover{
   background-color:#e0e0e0;
 }
 

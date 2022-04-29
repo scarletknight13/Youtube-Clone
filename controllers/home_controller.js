@@ -7,8 +7,9 @@ const db = require('../models');
 // index route should display list of videos like youtube home page
 router.get('/', async (req, res, next)=>{
     try{
-        const videos = await db.Video.find({});
-        const context = {videos};
+        const rawVideoData = await db.Video.find({}).populate("channel");
+        const formattedVideoData = require('../scripts/formatVideoData')(rawVideoData);
+        const context = {videos: formattedVideoData};
         return res.render('home.ejs', context);
     }
     catch(error){
