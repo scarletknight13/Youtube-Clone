@@ -1,33 +1,45 @@
+/* Imports */
+@import "header.css";
+@import "sideBar.css";
+
 /* Body */
 body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    color:#282828;
+    color:#282828;  display: grid;
+    grid-template-columns: .71fr 5fr;
+    grid-template-rows: 54px 54px 5fr;
+    grid-template-areas:
+    "side-bar header"
+    "side-bar tag-buttons"
+    "side-bar main";
 }
 
-.nav-grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main main main'
-    'menu footer footer footer footer footer';
-  gap: 20px;
-  padding: 10px;
-}
 /* Grid Container  */
-.nav-bar { grid-area: header; }
-.side-bar { grid-area: menu;}
+.header { grid-area: header; }
+.side-bar { grid-area: side-bar;}
 .main-content { grid-area: main;}
 /* .item4 {grid-area: side;} */
 
-
-
-.nav-grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+.header {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "search-bar nav-icons";
+    background-color: red;
+}
+    
+.search-bar {
+    display: flex;
+    justify-content: center;
+    /* border:1px solid #000; */
+    /* display:inline-block; */
+}
+.nav-icons {
+      grid-area: nav-icons;
+      display:flex;
 }
 
 /* Search Bar */

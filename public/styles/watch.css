@@ -1,3 +1,7 @@
+/* Imports */
+@import "header.css";
+@import "sideBar.css";
+
 /* Body */
 body{
     margin: 0;
