@@ -1,41 +1,65 @@
-/* .header {
+
+/* Header is the parent class which is split into two primary divs, the search-bar and the nav-icons */
+
+
+/* Header Parent Class Styling*/
+
+.header {
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
     "search-bar nav-icons";
     background-color: red;
-    } */
-    
-    .test{
-        float: left;
-        font-family: 'League Gothic', sans-serif;
-        
-        
-    }
-    
-    .fa-bars{
-        padding: 0 25px;
-    }
-    
-    .glass{
-        font-size: 2rem;
-        
-    }
+} 
+.test{
+    float: left;
+    font-family: 'League Gothic', sans-serif;  
+}
 
-    input,text{
-        width: 450px;
-        font-size: 1.25rem;
-    }
-    .wrapper {
-        border:1px solid #000;
-        display:inline-block;
-    }
+.fa-bars{
+    padding: 0 25px;
+}
+
+.glass{
+    font-size: 2rem;
+
+}
+
+.wrapper {
+    border:1px solid #000;
+    display:inline-block;
+}
+
+
+input,
+button {
+    background-color:transparent;
+    border:0;
+}
     
-    
-    input,
-    button {
-        background-color:transparent;
-        border:0;
-    }
-    
+.header > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+/* Search Bar Class Styling */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    /* border:1px solid #000; */
+    /* display:inline-block; */
+}
+
+/* Nav Icons Class Styling */
+.nav-icons {
+    grid-area: nav-icons;
+    display:flex;
+}
+input,text{
+    width: 450px;
+    font-size: 1.25rem;
+}
+

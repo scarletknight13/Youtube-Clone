@@ -1,6 +1,5 @@
 /* Imports */
 @import "header.css";
-@import "sideBar.css";
 
 /* Body */
 body{
@@ -21,11 +20,6 @@ body{
     gap: 20px;
    max-width: fit-content;
 }
-
-
-
-
-
 
 /* List Style */
 li{
