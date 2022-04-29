@@ -4,80 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/show.css">
+    <title><%=videoLink.title%></title>
+    <link rel="stylesheet" href="/styles/show.css">
     <%-include('partials/links.ejs')%>
     <%-include('partials/nav.ejs')%>
 </head>
 <body>
-    <div class="item3">
-        <div id="artistbio">
-            <div class="showVid">
-                <iframe width="1000px" height="550px" src="<%= videoLink %>" 
+    <div class="grid-container-video">
+        
+        <div class="main-video-section">
+            <div class="current-video">
+                <iframe width="1000px" height="550px" src="<%=videoLink.videoData%>" 
+
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
-               
-      
-            </div>
-            Artist Name - Video Title
-            <div id="views">
-                <p>1000 views <%=new Date().toLocaleDateString()%> 
-                 
-                        <button><i class=" fa-solid fa-thumbs-up"></i> 25k</button>
-                        <button><i class=" fa-solid fa-thumbs-down"></i>DISLIKE</button>
-                        <button><i class="fa-solid fa-share"></i>SHARE</button>
-                        <button><i class="fa-solid fa-download"></i>DOWNLOAD</button>
-                        <button><i class="fa-solid fa-scissors"></i>CLIP</button>
-                        <button><i class="fa-solid fa-plus"></i>SAVE</button>
-                        
-                    
-                   
                 
-                </p> 
+                <%=videoLink.channel.name%> - <%=videoLink.title%>
+            </div>
+            <div class="video-title-likes">
+                <p><%=videoLink.views%> views <%=new Date().toLocaleDateString()%> 
+                 
+                    <button><i class=" fa-solid fa-thumbs-up"></i> <%=videoLink.likes%></button>
+                    <button><i class=" fa-solid fa-thumbs-down"></i>DISLIKE</button>
+                    <button><i class="fa-solid fa-share"></i>SHARE</button>
+                    <button><i class="fa-solid fa-download"></i>DOWNLOAD</button>
+                    <button><i class="fa-solid fa-scissors"></i>CLIP</button>
+                    <button><i class="fa-solid fa-plus"></i>SAVE</button>
+                    
+                
+               
             
+                </p> 
             </div>
             <hr>
-            <div id="videoabout">
-                <img class="profileimg"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder">
-                <h3>Artist               <i class="i fa-solid fa-bell"></i><span><button class="i">Subscribe</button></span></h3>
-                <p>14 subscribers</p>
+            <div class="video-description">
+                <img class ="profile-img"src="<%=videoLink.thumbnail%>" alt="Artist Profile Picture">
+                <h3>Artist<span><button class="i">Subscribe</button></span></h3>
+                <p>Subscribers</p>
+                <p><%=videoLink.description%></p>
             </div>
-            <h5>Title Of Artist - Video </h5>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </p>
+            
+            <hr>
+            <div class="video-comments">
+                <span><%=videoLink.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
+                    <%for(let i = 0; i < allComments.length; i++) {%>
+                    <div class="comments">
+                        
+                        <p><img class="profile-img"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder"><%=allComments[i].textContent%></p>
+                        
+                    </div>
+                    <br>
+                    <%}%>
+            </div>
+            <br>
           
         </div>
-        <hr>
-        <div id="comment">
-            <span>Numberof Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
-        </div>
-        <br>
-        <div class="addcomment">
-
-            <img class="profileimg"src="https://www.indiantrailanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="placerholder">
-            <br>
-            <form method="POST" action="/watch/<%=videoId %>">
-                
-                <input type="text" name="textContent" id="" placeholder="Add a comment...">
-                <input type="hidden" name="isReply" value="false">
-                <input type="hidden" name="channel" value="626957058e1967faf6148714">
-                <input type="submit" value="COMMENT" style="background-color: #F4F4F4">
-
-            </form>
         
-        </div>
-      </div>  
-  </div>
+        <div class="side-video-playlist">
+            <div class="tags">
+                <button class="tag-button">Cars</button>
+                <button class="tag-button">Science</button>
+                <button class="tag-button">Cats</button>
+                <button class="tag-button">Money</button>
+            </div>
+            <%for(let i = 0; i< 10; i++){%>
+                <p><a class="video-title" href="/watch/<%=videos[i]._id%>"><img src="<%=videos[i].thumbnail%>" alt="<%=videos[i].title%>"><%= videos[i].title %></a></p>
+           <% }%>
 
+        </div>
+        
+        
+        
+        
 
     
+    </div>
 </body>
 </html>
