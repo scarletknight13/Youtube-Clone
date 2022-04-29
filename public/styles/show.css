@@ -29,6 +29,7 @@ body{
   font-size: 30px;
 }
 
+
 /* Search Bar */
 input,text{
     width: 450px;
@@ -46,6 +47,7 @@ button {
     border:0;
 }
 
+
 /* List Style */
 li{
     list-style: none;
@@ -58,6 +60,7 @@ li{
     float:right;
     
 }
+
 /* NavBar Youtube Logo Padding */
 
 .test{
@@ -76,73 +79,55 @@ li{
     
 }
 
-/* SideNav */
-.sidenav{
-    font-size: 1rem;
-    padding: 10px;
-    text-align: left;
-}
+/* Grid Work Video Section */
+  .grid-container-video{
+      display: grid;
+      grid-template-columns: 4fr 2fr;
+      grid-template-rows: 4fr 1fr 3fr;
+      height: 100vh;
+      margin: 2em;
+      gap: 20px;
+  }
 
-.sidenav i{
-    padding-left: 15px;
-    float: left;
-    padding-right: 15px;
-}
 
-.copyright{
-    font-size: .7rem;
-}
+  /* Video Section */
+.main-video-section{
+    max-width: 1000px;
+    line-height: 2;
+  }
 
-.sidebar_foot{
-    font-size:.7rem;
-    padding: 10px;
-}
-
-/* Artist Bar */
-#artistbio{
-    font-size: 1.2rem;
-    float: left;
-    text-align: left;
-    
-}
-#views, #videoabout p{
-    font-size:.8rem;
-}
-
-#views button{
-    padding: 0 20px;
-    margin: 10px;
-    text-align: right;
-}
-
-.profileimg{
+.profile-img{
     aspect-ratio: 1;
     width: 50px;
     border-radius: 50%;
     float: left;
     padding-right: 10px;
-}
+  }
 
-#videoabout button{
-    background-color: #F4F4F4;
-    font-size: 1.2rem;
-    padding: 3px 15px;
+  .video-comments span{
+     padding-right: 15px;
+  }
+
+
+.side-video-playlist{
+    float: left;
+    max-width: 480px;
     
 }
 
-#comment span{
-    font-size: 1rem;
-    float: left;
-
-   
-}
-
-.addcomment{
-   text-align: left;
-   
-}
-
-.submit{
-    text-align: right;
-   
-}
+.tag-button{
+    background-color:#F4F4F4;
+    color:#808080;
+    margin: 0 15px;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50%
+  }
+  
+  .tag-button:hover{
+    background-color:#e0e0e0;
+  }
+  
