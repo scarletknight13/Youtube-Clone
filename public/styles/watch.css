@@ -7,51 +7,19 @@ body{
     padding: 0;
     font-family: 'Roboto', sans-serif;
     color: #282828;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-template-rows: 4fr 1fr 3fr;
+    grid-template-areas:
+    'header header'
+    'main side'
+    
+    ;
+    height: 100vh;
+    margin: 2em;
+    gap: 20px;
+   max-width: fit-content;
 }
-
-/* Grid Container  */
-.item1 { grid-area: header; }
-.item2 { grid-area: menu;}
-.item3 { grid-area: main; }
-
-
-/* .grid-container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-    'header header header header header header'
-    'main main main main main main'
-    'footer footer footer footer footer footer';
-  gap: 20px;
-  padding: 10px;
-} */
-/* 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-} */
-
-
-/* Search Bar */
-input,text{
-    width: 450px;
-    font-size: 1.25rem;
-}
-.wrapper {
-    border:1px solid #000;
-    display:inline-block;
-}
-
-
-input,
-button {
-    background-color:transparent;
-    border:0;
-}
-
 
 /* List Style */
 li{
@@ -66,23 +34,6 @@ li{
     
 }
 
-/* NavBar Youtube Logo Padding */
-
-.test{
-    float: left;
-    font-family: 'League Gothic', sans-serif;
-    
-    
-}
-
-.fa-bars{
-    padding: 0 25px;
-}
-
-.glass{
-    font-size: 2rem;
-    
-}
 
 /* Grid Work Video Section */
   .grid-container-video{
@@ -98,6 +49,7 @@ li{
 
   /* Video Section */
 .main-video-section{
+  grid-area: main;
     max-width: 1000px;
     line-height: 2;
   }
@@ -110,17 +62,46 @@ li{
     padding-right: 10px;
   }
 
-  .video-comments span{
-     padding-right: 15px;
-  }
+
 
 
 .side-video-playlist{
+  grid-area: side;
     float: left;
     max-width: 480px;
     
 }
 
+
+.video-description-grid{
+  display: grid;
+  grid-template-columns: .5fr 2fr;
+  grid-template-rows: .4fr 1fr;
+  grid-template-areas: 
+  'profile subscribed'
+  'description description'
+  ;
+}
+.video-description{
+  grid-area: profile;
+  text-align: center;
+  padding-bottom: 0px;
+  
+  
+}
+.video-description image{
+  float: left;
+  
+}
+.subscribe-button{
+  grid-area: subscribed;
+}
+.description{
+  grid-area: description;
+}
+
+
+/* Buttons */
 .tag-button{
     background-color:#F4F4F4;
     color:#808080;
@@ -137,3 +118,66 @@ li{
     background-color:#e0e0e0;
   }
   
+
+.comment-button,.subscribe{
+  background-color:#0091ea ;
+  color:white;
+  margin: 0 15px;
+  width: 150px;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  float: right;
+}
+
+
+.hidden{
+  display: none;
+}
+
+
+.subscribe{
+  background-color: #FF0000;
+
+}
+
+.edit-pin{
+  float: right;
+  cursor: pointer;
+  
+}
+
+.delete-button{
+  background-color: #FF0000;
+  color: #e0e0e0;
+  border-radius: 50%;
+  width: 25px;
+}
+.edit-button{
+  background-color: #808080;
+  color: #e0e0e0;
+  width: 40px;
+}
+
+.edit-delete input text{
+  opacity: 1;
+}
+
+.edit-delete input{
+  float: right;
+}
+
+.comments{
+  display: grid;
+  grid-template-columns:2fr 1fr;
+  
+}
+
+.sidenav{
+  grid-area: header;
+}
+
+.comment-length{
+  text-indent: 50px;
+}

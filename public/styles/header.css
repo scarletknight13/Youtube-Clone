@@ -1,10 +1,9 @@
+
 /* Header is the parent class which is split into two primary divs, the search-bar and the nav-icons */
 
 
 /* Header Parent Class Styling*/
-.header {
-    grid-area: header;
-}
+
 .header {
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -12,7 +11,33 @@
     grid-template-areas:
     "search-bar nav-icons";
     background-color: red;
+} 
+.test{
+    float: left;
+    font-family: 'League Gothic', sans-serif;  
 }
+
+.fa-bars{
+    padding: 0 25px;
+}
+
+.glass{
+    font-size: 2rem;
+
+}
+
+.wrapper {
+    border:1px solid #000;
+    display:inline-block;
+}
+
+
+input,
+button {
+    background-color:transparent;
+    border:0;
+}
+    
 .header > div {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
@@ -37,3 +62,4 @@ input,text{
     width: 450px;
     font-size: 1.25rem;
 }
+
