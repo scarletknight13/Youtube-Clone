@@ -3,15 +3,19 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../models');
+
+
  
 router.get('/:id', async (req, res, next)=>{
     try{
         const currentVideo = await db.Video.findById(req.params.id).populate('comments');
+        const allVideo = await db.Video.find({});
         const comments = currentVideo.comments;
 
         console.log(currentVideo);
         const context = {
             videoLink: currentVideo,
+            videos: allVideo,
             comments: currentVideo
         }
         return res.render('show.ejs', context);
