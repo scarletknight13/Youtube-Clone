@@ -17,7 +17,10 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // Define Router Controllers here:
-app.use('/', controllers.home);
+app.get('/', (req, res)=>{
+    res.render('test.ejs')
+})
+// app.use('/', controllers.home);
 app.use('/watch', controllers.watch);
 app.use('/results', controllers.results);
 // app.use('/channel', controllers.channel)
