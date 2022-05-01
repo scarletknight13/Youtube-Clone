@@ -1,6 +1,13 @@
 
+.side-bar{
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.side-bar:hover{
+    overflow-y: visible;
+}
 .sidenav {
-    font-size: 1rem;
     text-align: left;
     display: flex;
     flex-direction: column;
