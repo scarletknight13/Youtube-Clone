@@ -65,4 +65,9 @@
     font-stretch: ultra-condensed;
     align-items: center;
 }
+.icon-redirect, .icon-redirect:hover, .icon-redirect:visited, .icon-redirect:active {
+    color: inherit;
+    text-decoration: none;
+}
+
 
