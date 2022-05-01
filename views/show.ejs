@@ -91,7 +91,7 @@
                         <p><img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder"><%=comment.textContent%></p>
                         <button class="edit-pin"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                         <div class="edit-delete hidden">
-
+                            
                             <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
                                 <input type="text" name="textContent" value="<%= comment.textContent %>">
                                 <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
