@@ -2,37 +2,33 @@
 .sidenav {
     font-size: 1rem;
     text-align: left;
-    width: 15.5vw;
+    display: flex;
+    flex-direction: column;
 }
-
-.sidenav li:hover {
-    background-color: #F4F4F4;
+.tab{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
-
-.sidenav i {
-    padding-left: 15px;
-    float: left;
-    padding-right: 15px;
+i, h6{
+    margin-left: 1.8vw;
 }
-
-.sidebar_foot{
-    font-size:.7rem;
-    padding: 10px;
+h6{
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 14px;
 }
-
-.test{
-    float: left;
-    font-family: 'League Gothic', sans-serif;
+.tab{
+    border: 0;
+    text-align: left;
+    background-color: white;
+    border-radius: 10%;
 }
-  
-.fa-bars{
-    padding: 0 25px;
+.tab:hover{
+    background-color: lightgray;
 }
-  
-.glass{
-    font-size: 2rem;
-    
-}
-.copyright{
-    font-size: .7rem;
+hr{
+    border: none;
+    height: .15vh;
+    background: lightgray;
 }

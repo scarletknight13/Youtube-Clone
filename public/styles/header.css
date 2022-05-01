@@ -1,24 +1,68 @@
 .header {
     display: flex;
     justify-content: space-between;
-    height: 8vh;
+    height: 10vh;
     width: 100%;
     top: 0px;
     position: fixed;
 }
 .nav-icons, .search-bar, .menu-and-logo{
-    height: 100%;
+    height: 80%;
     display: flex;
     align-items: center;
 }
-.search-bar{
-    width: 50%;
+.menu-and-logo{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-.nav-icons, .menu-and-logo{
-    width: 20%;
+.search-bar{
+    /* width: 65%; */
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+
+}
+.search-box-form{
+    height: 100%;
+}
+.search-input-box{
+    width: 35vw;
+    margin: 0;
+    height: 4.5vh;
+}
+.search-button{
+    height: 4.5vh;
+    width: 3vw;
+    padding: 0;
+    margin: 0;
+}
+.nav-icons{
+    width: 15%;
     display: flex;
 }
 .nav-icons i{
     width: 20%;
+}
+.logo-content{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.menu-button{
+    /* height: 50%; */
+}
+.logo{
+    height: 100%;
+}
+.logo-title{
+    margin: 0;
+    font-weight: bolder;
+    line-height: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 22px;
+    font-stretch: ultra-condensed;
+    align-items: center;
 }
 
