@@ -1,0 +1,43 @@
+@import "header.css";
+@import "sideBar.css";
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.divider{
+    height: 10vh;
+    width: 100vw;
+}
+.main{
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+}
+.tags{
+
+}
+.video-content{
+    width: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.video-card{
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+    margin-bottom: 10px;
+}
+img{
+    width: 35%;
+    height: 100%;
+}
+.video-card-info{
+    width: 65%;
+}
+
+

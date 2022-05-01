@@ -15,8 +15,6 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
-
-// Define Router Controllers here:
 app.use('/', controllers.home);
 app.use('/watch', controllers.watch);
 app.use('/results', controllers.results);
