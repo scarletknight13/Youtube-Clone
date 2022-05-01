@@ -1,11 +1,11 @@
 
-let $comment = $('#addingcomment')
+const $comment = $('#addingcomment')
 
-let $commentButton = $('.comment-button')
+const $commentButton = $('.comment-button')
 
-let $editPin = $('.edit-pin')
+const $editPin = $('.edit-pin')
 
-let $editDelete = $('.edit-delete')
+const $editDelete = $('.edit-delete')
 
 
 
