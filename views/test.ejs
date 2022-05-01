@@ -9,16 +9,28 @@
 </head>
 <body>
     <%-include('partials/header.ejs') %>
-    <div class="divider"> </div>
     <div class="main">
         <%-include('partials/sideBar.ejs')%>    
         <div class="video-content">
-            <div class="tags"><h3>Filters</h3></div>
-            <% for(let i = 0; i < 25; ++i){ %>
+            <div class="tags">
+                <i class='filter-icon w3-large fas fa-sliders-h'></i>
+                <h3 class="filter-label">FILTERS</h3>
+                <hr class="horizontal-line">
+            </div>
+            <% for(let i = 0; i < videos.length; ++i){ %>
+                <% const video = videos[i] %>
                 <div class="video-card">
-                    <img src="data:image/jpeg;base64,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" alt="">
+                    <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
                     <div class="video-card-info">
-                        <h2>this is a title</h2>
+                        <div class="video-title-container">
+                            <h5 class="video-title"><%= video.title %></h5>
+                        </div>
+                        <div class="view-and-date-container">
+                            <h6><%= video.views %> views - <%= video.createdAt %></h6>
+                        </div>
+                        <div class="description-container">
+                            <h6 class="description"><%= video.description %></h6>
+                        </div>
                     </div>
                 </div>
             <% } %>
