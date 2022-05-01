@@ -52,7 +52,7 @@ li{
 
 
 
-
+/* Side Video Bar */
 .side-video-playlist{
   grid-area: side;
     float: left;
@@ -60,7 +60,7 @@ li{
     
 }
 
-
+/* Video Description Grid */
 .video-description-grid{
   display: grid;
   grid-template-columns:.2fr 4fr 1fr;
@@ -120,7 +120,7 @@ li{
   }
   
 
-.comment-button,.subscribe{
+.comment-button,.subscribe,.cancel{
   background-color:#0091ea ;
   color:white;
   margin: 0 15px;
@@ -129,6 +129,7 @@ li{
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  cursor: pointer;
   float: right;
 }
 
@@ -137,11 +138,20 @@ li{
   display: none;
 }
 
+.comment-button{
+  margin-top: 30px;
+}
+
+.cancel{
+  background-color: white;
+  color: #404040;
+}
 
 .subscribe{
   background-color: #FF0000;
 
 }
+
 
 .edit-pin{
   float: right;

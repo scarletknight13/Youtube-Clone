@@ -59,7 +59,7 @@
                     <p><%=currentVideo.channel.subscribers%> Subscribers</p>
                 </div>
                 <div class="subscribe-button">
-                    
+
                     <button class="subscribe">Subscribe</button>
                 </div>
                 <div class="description">
@@ -71,13 +71,14 @@
             <hr>
             <div class="video-comments">
 
-                <form class="add-comments" method="POST" action="/watch/<%=currentVideo._id %>">
+                <form method="POST" action="/watch/<%=currentVideo._id %>">
                     <input type="hidden" name="isReply" value="false">
                     <input type="hidden" name="channel" value="626957058e1967faf6148714">
                     <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
                     <input type="text" name="textContent" id="addingcomment" style="font-size:15px" placeholder="Add a comment...">
                     <input class="comment-button hidden" type="submit" value="COMMENT">
                 </form>
+                <button class="cancel hidden">CANCEL</button>
 
 
                 <span class="comment-length"><%=currentVideo.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
