@@ -60,7 +60,7 @@
                 </div>
                 <div class="subscribe-button">
 
-                    <button class="subscribe">Subscribe</button>
+                    <button class="subscribe">SUBSCRIBE</button>
                 </div>
                 <div class="description">
 
@@ -87,8 +87,13 @@
                         
                         
                     <div class="comments">
-                            
-                        <p><img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder"><%=comment.textContent%></p>
+                        <div class="user-img">
+                            <img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder">
+                        </div>
+                        <div class="user-name">
+                            <h5><%=currentVideo.channel.name%></h5>
+                            <p><%=comment.textContent%></p>
+                        </div>
                         <button class="edit-pin"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                         <div class="edit-delete hidden">
                             

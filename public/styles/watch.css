@@ -3,24 +3,27 @@
 
 /* Body */
 body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    color: #282828;
-    display: grid;
-    grid-template-columns: 4fr 2fr;
-    grid-template-rows: 4fr 1fr 3fr;
-    grid-template-areas:
-    'header header'
-    'main side'
-    
-    ;
-    height: 100vh;
-    margin: 2em;
-    gap: 20px;
-   max-width: 1500px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #282828;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-rows: 4fr 1fr 3fr;
+  grid-template-areas:
+  'header header'
+  'main side'
+  
+  ;
+  height: 100vh;
+  margin: 2em;
+  gap: 20px;
+  max-width: 1500px;
 }
 
+.sidenav{
+  grid-area: header;
+}
 /* List Style */
 li{
     list-style: none;
@@ -34,6 +37,13 @@ li{
     
 }
 
+hr{
+  border: none;
+  height: 1px;
+ background-color: #DDDDDD;
+  
+}
+
 
   /* Video Section */
 .main-video-section{
@@ -41,7 +51,7 @@ li{
     max-width: 1000px;
     line-height: 2;
   }
-
+  
 .profile-img{
     aspect-ratio: 1;
     width: 50px;
@@ -85,13 +95,13 @@ li{
 .channel-subs{
   grid-area: name;
  line-height: 0;
-
-
+ 
+ 
 }
 .channel-subs p{
   font-size: .8rem;
   color:#404040 ;
-
+  
 }
 
 .subscribe-button{
@@ -121,10 +131,11 @@ li{
   
 
 .comment-button,.subscribe,.cancel{
-  background-color:#0091ea ;
+  background-color:#3273dc  ;
   color:white;
   margin: 0 15px;
-  width: 150px;
+  width: 130px;
+  height: 40px;
   padding: 12px 12px;
   text-align: center;
   text-decoration: none;
@@ -138,9 +149,6 @@ li{
   display: none;
 }
 
-.comment-button{
-  margin-top: 30px;
-}
 
 .cancel{
   background-color: white;
@@ -148,16 +156,10 @@ li{
 }
 
 .subscribe{
-  background-color: #FF0000;
+  background-color: #c00;
 
 }
 
-
-.edit-pin{
-  float: right;
-  cursor: pointer;
-  
-}
 
 .delete-button{
   background-color: #FF0000;
@@ -185,20 +187,40 @@ li{
   float: right;
 }
 
-.comments{
-  display: grid;
-  grid-template-columns:2fr 1fr;
-  
+/* Comments */
+
+input[type=text]{
+  width: 98%;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+ 
 }
 
-.sidenav{
-  grid-area: header;
+input[type=text]:focus{
+  display: inline-block;
+  position: relative;
+  border-color: #282828;
+}
+
+.comment{
+  display: grid;
+}
+
+.user-name{
+  line-height: 0;
+  padding-top: .2px;
+}
+.edit-pin{
+  float: right;
+  cursor: pointer;
+  
 }
 
 .comment-length{
   text-indent: 50px;
 }
 
+/* Video Title Description Likes Name */
 .video-title-likes{
   display: flex;
   justify-content: space-between;
