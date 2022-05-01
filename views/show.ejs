@@ -93,8 +93,13 @@
                         <div class="user-name">
                             <h5><%=currentVideo.channel.name%></h5>
                             <p><%=comment.textContent%></p>
+                            <div class="like-reply">
+                                <button><i class="fa-regular fa-thumbs-up"></i></button>
+                                <button><i class="fa-regular fa-thumbs-down"></i></button>
+                                <button>REPLY</button>
+                            </div>
                         </div>
-                        <button class="edit-pin"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <button class="edit-pin hidden"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                         <div class="edit-delete hidden">
                             
                             <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">

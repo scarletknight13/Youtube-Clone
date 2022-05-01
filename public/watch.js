@@ -11,8 +11,13 @@ const $editDelete = $('.edit-delete')
 
 const $textarea = $('#addingcomment')
 
+const $commentSection =$('.comments')
 
 
+
+$commentSection.hover(()=>{
+    $editPin.removeClass('hidden')
+})
 
 $editPin.click(()=>{
     $editPin.addClass('hidden')
