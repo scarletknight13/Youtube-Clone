@@ -1,6 +1,7 @@
 
 .side-bar{
     overflow: scroll;
+    width: 15vw;
     overflow-x: hidden;
     overflow-y: hidden;
     border-right: solid 1px lightgray;

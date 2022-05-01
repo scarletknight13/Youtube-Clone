@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%-include('partials/links.ejs')%>
+    <link rel="stylesheet" href="/styles/test.css">
 </head>
 <body>
     <%-include('partials/header.ejs') %>
@@ -19,20 +20,23 @@
             </div>
             <% for(let i = 0; i < videos.length; ++i){ %>
                 <% const video = videos[i] %>
-                <div class="video-card">
-                    <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
-                    <div class="video-card-info">
-                        <div class="video-title-container">
-                            <h5 class="video-title"><%= video.title %></h5>
-                        </div>
-                        <div class="view-and-date-container">
-                            <h6><%= video.views %> views - <%= video.createdAt %></h6>
-                        </div>
-                        <div class="description-container">
-                            <h6 class="description"><%= video.description %></h6>
+                <a class="icon-redirect" href="http://localhost:4500/watch/<%=video._id%>">
+                    <div class="video-card">
+                        <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
+                        <div class="video-card-info">
+                            <div class="video-title-container">
+                                <h5 class="video-title"><%= video.title %></h5>
+                            </div>
+                            <div class="view-and-date-container">
+                                <h6><%= video.views %> views - <%= video.createdAt %></h6>
+                            </div>
+                            <div class="description-container">
+                                <h6 class="description"><%= video.description %></h6>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+                
             <% } %>
         </div>
     </div>

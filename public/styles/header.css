@@ -2,7 +2,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    height: 10vh;
+    height: 8vh;
     width: 100%;
 }
 .nav-icons, .search-bar, .menu-and-logo{

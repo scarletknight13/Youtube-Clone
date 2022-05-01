@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%-include('partials/links.ejs')%>
+    <link rel="stylesheet" href="/styles/test2.css">
+</head>
+<body>
+    <%-include('partials/header.ejs') %>
+    <div class="main">
+        <%-include('partials/sideBar.ejs')%>    
+        <div class="video-content">
+            <div class="tags">
+                <% for(let i = 0; i < 20; i++){ %>
+                    <button class="tag">
+                        JavaScript
+                    </button>
+                <% } %>
+            </div>
+            <div class="video-display">
+                <% for(let i = 0; i < videos.length; ++i){ %>
+                    <% const video = videos[i] %>
+                        <div class="video-card">
+                            <div class="video-card-img-container">
+                                <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
+                            </div>
+                            <div class="video-card-info">
+                                <div class="video-title-container">
+                                    <h5 class="video-title"><%= video.title %></h5>
+                                </div>
+                                <div class="view-and-date-container">
+                                    <h6 class="view-and-date"><%= video.views %> views - <%= video.createdAt %></h6>
+                                </div>
+                            </div>
+                        </div>
+                    
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
