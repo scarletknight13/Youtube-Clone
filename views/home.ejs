@@ -15,8 +15,9 @@
         <%-include('partials/sideBar.ejs')%>    
         <div class="video-content">
             <div class="tags">
-                <% for(let i = 0; i < 20; i++){ %>
-                    <button class="tag">Newest</button>
+                <% for(let i = 0; i < tagNames.length; i++){ %>
+                    <% const tagName = tagNames[i]; %>
+                    <h6 class="tag"><%=tagName%></h6>
                 <% } %>
             </div>
             <div class="video-display">

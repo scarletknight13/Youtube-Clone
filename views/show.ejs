@@ -115,7 +115,38 @@
                                 <input class="delete-button" type="submit" value="Del">
                             </form>
                         </div>
-                       
+                        <div class="replies">
+                            <% for(let i = 0; i < comment.replies.length; ++i){%>
+                                <% const reply = comment.replies[i]; %>
+                                <div class="user-img">
+                                    <img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder">
+                                </div>
+                                <div class="user-name">
+                                    <h5><%=reply.channel.name%></h5>        
+                                    <p><%=reply.textContent%></p>
+                                    <div class="like-reply">
+                                        <button><i class="fa-regular fa-thumbs-up like-button"></i></button>
+                                        <button><i class="fa-regular fa-thumbs-down"></i></button>
+                                        <button><i class="fa-regular fa-heart"></i></button>
+                                        <button>REPLY</button>
+                                    </div>
+                                </div>
+                                <button class="edit-pin hidden"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                <div class="edit-delete hidden">
+                                    
+                                    <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
+                                        <input id="addingcomment" type="text" name="textContent" value="<%= comment.textContent %>">
+                                        <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                                        <input class="edit-button" type="submit" value="Edit">
+            
+                                    </form>
+                                    <form class="delete" method="POST" action="/watch/<%= comment._id %>?_method=DELETE">
+                                        <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                                        <input class="delete-button" type="submit" value="Del">
+                                    </form>
+                                </div>
+                            <%}%>
+                        </div>
                         
                         
                     </div>
