@@ -3,24 +3,27 @@
 
 /* Body */
 body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    color: #282828;
-    display: grid;
-    grid-template-columns: 4fr 2fr;
-    grid-template-rows: 4fr 1fr 3fr;
-    grid-template-areas:
-    'header header'
-    'main side'
-    
-    ;
-    height: 100vh;
-    margin: 2em;
-    gap: 20px;
-   max-width: fit-content;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #282828;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-rows: 4fr 1fr;
+  grid-template-areas:
+  'header header'
+  'main side'
+  
+  ;
+  height: 100vh;
+  margin: 2em;
+  gap: 20px;
+  max-width: 1500px;
 }
 
+.sidenav{
+  grid-area: header;
+}
 /* List Style */
 li{
     list-style: none;
@@ -34,17 +37,12 @@ li{
     
 }
 
-
-/* Grid Work Video Section */
-  .grid-container-video{
-      display: grid;
-      grid-template-columns: 4fr 2fr;
-      grid-template-rows: 4fr 1fr 3fr;
-      height: 100vh;
-      margin: 2em;
-      gap: 20px;
-     max-width: fit-content;
-  }
+hr{
+  border: none;
+  height: 1px;
+ background-color: #DDDDDD;
+  
+}
 
 
   /* Video Section */
@@ -53,7 +51,7 @@ li{
     max-width: 1000px;
     line-height: 2;
   }
-
+  
 .profile-img{
     aspect-ratio: 1;
     width: 50px;
@@ -64,22 +62,36 @@ li{
 
 
 
-
+/* Side Video Bar */
 .side-video-playlist{
   grid-area: side;
     float: left;
     max-width: 480px;
-    
+
 }
 
+.side-video-grid{
+  display: flex;
+  flex-direction: column;
+  
+}
+.side-video-grid p{
+  justify-content: end;
+}
 
+.video-title img{
+  width: 168px;
+
+}
+
+/* Video Description Grid */
 .video-description-grid{
   display: grid;
-  grid-template-columns: .5fr 2fr;
-  grid-template-rows: .4fr 1fr;
-  grid-template-areas: 
-  'profile subscribed'
-  'description description'
+  grid-template-columns:.2fr 4fr 1fr;
+  grid-template-rows: .2fr 1fr;
+  grid-template-areas:
+  'profile name subscribed '
+  'description description description '
   ;
 }
 .video-description{
@@ -87,12 +99,25 @@ li{
   text-align: center;
   padding-bottom: 0px;
   
-  
 }
+
 .video-description image{
   float: left;
+  margin: 5px;
   
 }
+.channel-subs{
+  grid-area: name;
+ line-height: 0;
+ 
+ 
+}
+.channel-subs p{
+  font-size: .8rem;
+  color:#404040 ;
+  
+}
+
 .subscribe-button{
   grid-area: subscribed;
 }
@@ -119,15 +144,17 @@ li{
   }
   
 
-.comment-button,.subscribe{
-  background-color:#0091ea ;
+.comment-button,.subscribe,.cancel{
+  background-color:#3273dc  ;
   color:white;
   margin: 0 15px;
-  width: 150px;
+  width: 130px;
+  height: 40px;
   padding: 12px 12px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  cursor: pointer;
   float: right;
 }
 
@@ -137,47 +164,112 @@ li{
 }
 
 
+.cancel{
+  background-color: white;
+  color: #404040;
+}
+
 .subscribe{
-  background-color: #FF0000;
+  background-color: #c00;
 
 }
 
-.edit-pin{
-  float: right;
-  cursor: pointer;
-  
-}
 
 .delete-button{
   background-color: #FF0000;
-  color: #e0e0e0;
-  border-radius: 50%;
-  width: 25px;
+  color: white;
+  width: 40px;
 }
+.delete-button:hover{
+  background-color: darkred;
+}
+
+
+
 .edit-button{
-  background-color: #808080;
-  color: #e0e0e0;
+  background-color: darkgray;
+  color: white;
   width: 40px;
 }
 
-.edit-delete input text{
-  opacity: 1;
+.edit-button:hover{
+  background-color: grey;
 }
+
 
 .edit-delete input{
   float: right;
 }
 
-.comments{
-  display: grid;
-  grid-template-columns:2fr 1fr;
-  
+/* Comments */
+
+input[type=text]{
+  width: 98%;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+ 
 }
 
-.sidenav{
-  grid-area: header;
+input[type=text]:focus{
+  display: inline-block;
+  position: relative;
+  border-color: #282828;
+}
+
+.comments{
+  display: grid;
+  grid-template-columns:.1fr 3fr .1fr;
+  grid-template-rows: 1fr .5fr;
+  grid-template-areas: 
+  'user comment edit'
+  'user reply reply'
+  ;
+}
+.user-img{
+  grid-area: user;
+}
+
+.user-name{
+  grid-area: comment;
+  line-height: 0;
+  padding-top: .2px;
+}
+.like-reply{
+  grid-area: reply;
+}
+
+.like-reply button{
+  cursor: pointer;
+  word-spacing: 1rem;
+}
+.edit-pin{
+  float: right;
+  cursor: pointer;
+  grid-area: edit;
+  
 }
 
 .comment-length{
   text-indent: 50px;
+}
+
+/* Video Title Description Likes Name */
+.video-title-likes{
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-title-icons{
+  word-spacing: 1rem;
+ 
+  
+
+}
+.video-title-icons i{
+  padding-right: 10px;
+  
+}
+
+.video-title-icons button{
+  cursor: pointer;
 }

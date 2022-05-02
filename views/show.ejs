@@ -24,31 +24,43 @@
                 <%=currentVideo.channel.name%> - <%=currentVideo.title%>
             </div>
             <div class="video-title-likes">
-                <p><%=currentVideo.views%> views <%=new Date().toLocaleDateString()%> 
-                 
+                <div class="views-date">
+                    <% const options = {year:'numeric', month:'long', day:'numeric'}%>
+                    <%=currentVideo.views%> views • <%=currentVideo.createdAt.toLocaleDateString(undefined,options)%> 
+                
+                </div>
+                
+                <div class="video-title-icons">
+
                     <button><i class=" fa-solid fa-thumbs-up"></i> <%=currentVideo.likes%></button>
                     <button><i class=" fa-solid fa-thumbs-down"></i>DISLIKE</button>
                     <button><i class="fa-solid fa-share"></i>SHARE</button>
                     <button><i class="fa-solid fa-download"></i>DOWNLOAD</button>
                     <button><i class="fa-solid fa-scissors"></i>CLIP</button>
                     <button><i class="fa-solid fa-plus"></i>SAVE</button>
+                    <button><i class="fa-solid fa-ellipsis"></i></button>
+
+                </div>
                     
                 
                
             
-                </p> 
+                
             </div>
             <hr>
             <div class="video-description-grid">
 
                 <div class="video-description">
                     <img class ="profile-img"src="<%=currentVideo.thumbnail%>" alt="Artist Profile Picture">
-                    <h3> <%=currentVideo.channel.name%></h3>
+                </div>
+                <div class="channel-subs">
+
+                    <h4> <%=currentVideo.channel.name%></h4>
                     <p><%=currentVideo.channel.subscribers%> Subscribers</p>
                 </div>
                 <div class="subscribe-button">
-                    
-                    <button class="subscribe">Subscribe</button>
+
+                    <button class="subscribe">SUBSCRIBE</button>
                 </div>
                 <div class="description">
 
@@ -59,13 +71,14 @@
             <hr>
             <div class="video-comments">
 
-                <form class="add-comments" method="POST" action="/watch/<%=currentVideo._id %>">
+                <form method="POST" action="/watch/<%=currentVideo._id %>">
                     <input type="hidden" name="isReply" value="false">
                     <input type="hidden" name="channel" value="626957058e1967faf6148714">
                     <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
-                    <input type="text" name="textContent" id="addingcomment" placeholder="Add a comment...">
+                    <input type="text" name="textContent" id="addingcomment" style="font-size:15px" placeholder="Add a comment...">
                     <input class="comment-button hidden" type="submit" value="COMMENT">
                 </form>
+                <button class="cancel hidden">CANCEL</button>
 
 
                 <span class="comment-length"><%=currentVideo.comments.length%> Comments<i class="fa-solid fa-arrow-down-wide-short"></i> SORT BY</span>
@@ -74,11 +87,21 @@
                         
                         
                     <div class="comments">
-                            
-                        <p><img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder"><%=comment.textContent%></p>
-                        <button class="edit-pin"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <div class="user-img">
+                            <img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder">
+                        </div>
+                        <div class="user-name">
+                            <h5><%=currentVideo.channel.name%></h5>
+                            <p><%=comment.textContent%></p>
+                            <div class="like-reply">
+                                <button><i class="fa-regular fa-thumbs-up like-button"></i></button>
+                                <button><i class="fa-regular fa-thumbs-down"></i></button>
+                                <button>REPLY</button>
+                            </div>
+                        </div>
+                        <button class="edit-pin hidden"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                         <div class="edit-delete hidden">
-
+                            
                             <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
                                 <input type="text" name="textContent" value="<%= comment.textContent %>">
                                 <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
@@ -87,7 +110,7 @@
                             </form>
                             <form class="delete" method="POST" action="/watch/<%= comment._id %>?_method=DELETE">
                                 <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
-                                <input class="delete-button" type="submit" value="X">
+                                <input class="delete-button" type="submit" value="Del">
                             </form>
                         </div>
                        
@@ -110,9 +133,13 @@
                 <button class="tag-button">Cats</button>
                 <button class="tag-button">Money</button>
             </div>
-            <%for(let i = 0; i< 10; i++){%>
-                <p><a class="video-title" href="/watch/<%=allVideos[i]._id%>"><img src="<%=allVideos[i].thumbnail%>" alt="<%=allVideos[i].title%>"><%= allVideos[i].title %></a></p>
-           <% }%>
+            <div class="side-video-grid">
+
+                <%for(let i = 0; i< 10; i++){%>
+                    <p><a class="video-title" href="/watch/<%=allVideos[i]._id%>"><img src="<%=allVideos[i].thumbnail%>" alt="<%=allVideos[i].title%>"><%= allVideos[i].title %></a></p>
+               <% }%>
+            
+            </div>
 
         </div>
         

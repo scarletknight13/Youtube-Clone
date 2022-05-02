@@ -1,20 +1,38 @@
 
-let $comment = $('#addingcomment')
+const $comment = $('#addingcomment')
 
-let $commentButton = $('.comment-button')
+const $commentButton = $('.comment-button')
 
-let $editPin = $('.edit-pin')
+const $cancelButton = $('.cancel')
 
-let $editDelete = $('.edit-delete')
+const $editPin = $('.edit-pin')
+
+const $editDelete = $('.edit-delete')
+
+const $textarea = $('#addingcomment')
+
+const $commentSection =$('.comments')
 
 
+
+$commentSection.hover(()=>{
+    $editPin.removeClass('hidden')
+})
 
 $editPin.click(()=>{
     $editPin.addClass('hidden')
     $editDelete.removeClass('hidden')
 
 })
-
+  
 $comment.click(()=>{
     $commentButton.removeClass('hidden')
+    $cancelButton.removeClass('hidden')
 })
+
+$cancelButton.click(()=>{
+    $textarea.val('')
+    $commentButton.addClass('hidden')
+    $cancelButton.addClass('hidden')
+})
+
