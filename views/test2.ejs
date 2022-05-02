@@ -7,6 +7,7 @@
     <title>Document</title>
     <%-include('partials/links.ejs')%>
     <link rel="stylesheet" href="/styles/test2.css">
+    <script src="./scripts/home.js" defer></script>
 </head>
 <body>
     <%-include('partials/header.ejs') %>
@@ -23,8 +24,9 @@
             <div class="video-display">
                 <% for(let i = 0; i < videos.length; ++i){ %>
                     <% const video = videos[i] %>
-                        <div class="video-card">
+                        <div id="<%= video._id %>"class="video-card">
                             <div class="video-card-img-container">
+                                <a href="http://localhost:4500/<%=video.videoData %>"></a>
                                 <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
                             </div>
                             <div class="video-card-info">
