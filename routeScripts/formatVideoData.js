@@ -39,6 +39,7 @@ function formatDate(uploadDate){
     let currentDate = new Date();
     let difference = currentDate.getTime()-uploadDate.getTime();
     let hours = difference / 1000 / 3600;
+    let minutes = hours * 60;
     if(hours >= 8760){
         ans = `${parseInt(hours / 8760)} years`;
     }
@@ -51,10 +52,13 @@ function formatDate(uploadDate){
     else if(hours >= 24){
         ans = `${parseInt(hours / 24)} days`
     }
-    else{
+    else if(hours > 1){
         ans = `${parseInt(hours)} hours`
     }
-    return ans;
+    else{
+        ans = `${parseInt(minutes)} minutes`
+    }
+    return ans + ' ago';
 
 }
 

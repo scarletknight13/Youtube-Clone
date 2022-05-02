@@ -15,7 +15,8 @@ router.get('/:id', async (req, res, next)=>{
         comments.forEach(element => {
             element.populate('replies')
         });
-        const allvideos = await db.Video.find({})
+        let allvideos = await db.Video.find({})
+        allvideos = require('../routeScripts/formatVideoData')([...allvideos]);
         const context = {
             currentVideo: currentVideo,
             comments: currentVideo.comments,
