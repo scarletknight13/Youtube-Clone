@@ -100,7 +100,14 @@
                                 <button><i class="fa-regular fa-thumbs-up like-button"></i></button>
                                 <button><i class="fa-regular fa-thumbs-down"></i></button>
                                 <button><i class="fa-regular fa-heart"></i></button>
-                                <button>REPLY</button>
+                                <form class="hidden reply-form" method="POST" action="/watch/<%=comment._id %>" autocomplete="off">
+                                    <input type="hidden" name="isReply" value="true">
+                                    <input type="hidden" name="channel" value="626957058e1967faf6148714">
+                                    <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
+                                    <input type="text" name="textContent" id="addingcomment" style="font-size:15px" placeholder="Reply Here...">
+                                    <input type="submit" value="REPLY">
+                                </form>
+                                <button class="reply">REPLY</button>
                             </div>
                         </div>
                         <button class="edit-pin hidden"><i class="fa-solid fa-ellipsis-vertical"></i></button>

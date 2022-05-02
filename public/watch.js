@@ -15,6 +15,15 @@ const $commentSection =$('.comments')
 
 const $heart =$('.fa-heart')
 
+const $replyForm=$('.reply-form')
+
+const $reply =$('.reply')
+
+$reply.click(()=>{
+    $replyForm.removeClass('hidden')
+    $reply.addClass('hidden')
+})
+
 
 $heart.click(()=>{
     $heart.css('color', 'red')
