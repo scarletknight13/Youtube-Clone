@@ -6,7 +6,7 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Gothic A1', sans-serif;
   color: #282828;
   display: grid;
   grid-template-columns: 4fr 2fr;
@@ -70,20 +70,38 @@ hr{
     max-width: 480px;
 
 }
+a{
+  text-decoration: none;
+}
 
 .side-video-grid{
   display: flex;
   flex-direction: column;
   
 }
-.side-video-grid p{
-  justify-content: end;
+
+.video-card-info{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  overflow: hidden;
 }
 
-.video-title img{
+.video-thumbnail img{
   width: 168px;
-
 }
+
+.video-card-title h5{
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.video-card-title h6{
+  font-size: .8rem;
+  color: #696969;
+}
+
+
 
 /* Video Description Grid */
 .video-description-grid{
@@ -232,7 +250,7 @@ input[type=text]:focus{
 
 .user-name{
   grid-area: comment;
-  line-height: 0;
+  line-height: 1;
   padding-top: .2px;
 }
 .like-reply{

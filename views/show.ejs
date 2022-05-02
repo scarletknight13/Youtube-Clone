@@ -92,11 +92,12 @@
                             <img class="profile-img"src="<%=currentVideo.channel.image%>" alt="placerholder">
                         </div>
                         <div class="user-name">
-                            <h5><%=currentVideo.channel.name%></h5>
+                            <h5><%=currentVideo.channel.name%></h5>        
                             <p><%=comment.textContent%></p>
                             <div class="like-reply">
                                 <button><i class="fa-regular fa-thumbs-up like-button"></i></button>
                                 <button><i class="fa-regular fa-thumbs-down"></i></button>
+                                <button><i class="fa-regular fa-heart"></i></button>
                                 <button>REPLY</button>
                             </div>
                         </div>
@@ -133,15 +134,34 @@
                 <button class="tag-button">Science</button>
                 <button class="tag-button">Cats</button>
                 <button class="tag-button">Money</button>
-            </div>
-            <div class="side-video-grid">
-
-                <%for(let i = 0; i< allVideos.length; i++){%>
-                    <p><a class="video-title" href="/watch/<%=allVideos[i]._id%>"><img src="<%=allVideos[i].thumbnail%>" alt="<%=allVideos[i].title%>"><%= allVideos[i].title %></a></p>
-               <% }%>
             
             </div>
+            <%for(let i = 0; i< allVideos.length; i++){%>
+            <div class="side-video-grid">
+                <a href="/watch/<%=allVideos[i]._id%>">
+                    <div class="video-card">
+                        <div class="video-card-info">
+                            <div class="video-thumbnail">
+                                <img src="<%=allVideos[i].thumbnail%>" alt="Picture of video thumbnail">
+                            </div>
 
+                            <div class="video-card-title">
+                                <h5><%=allVideos[i].title%></h5>
+                                <h6><%=allVideos[i].channel.name%></h6>
+                                <h6><%=allVideos[i].views%> views • <%=allVideos[i].createdAt.toLocaleDateString()%></h6>
+                            </div>
+                            
+                            <div class="video-card-channel-name">
+                            </div>
+                        
+                        </div>
+                    </div>
+                </a>
+                
+                    
+            </div>
+            <% }%>
+                
         </div>
         
         
