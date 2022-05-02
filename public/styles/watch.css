@@ -68,6 +68,7 @@ hr{
   grid-area: side;
   float: left;
   max-width: 480px;
+ 
 
 
 }
@@ -78,13 +79,13 @@ a{
 .side-video-grid{
   display: flex;
   flex-direction: column;
+  margin-bottom: 2vh;
   
 }
 
 .video-card-info{
   display: flex;
   flex-direction: row;
-  gap:20px;
   overflow: hidden;
 }
 
