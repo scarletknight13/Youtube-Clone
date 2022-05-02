@@ -129,8 +129,10 @@ a{
   /* margin-left: 5vw; */
 
 }
+
+
 iframe{
-  width: 60vw;
+  max-width: 60vw;
 }
 /* Video Description Grid */
 .video-description-grid{
