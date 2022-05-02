@@ -44,10 +44,15 @@ hr{
  background-color: #DDDDDD;
   
 }
+.views-date {
+  font-size: 14px;
+  color: grey;
+}
 
 
   /* Video Section */
 .main-video-section{
+  margin-left: 5vw;
   grid-area: main;
     max-width: 1000px;
     line-height: 2;
@@ -84,17 +89,27 @@ a{
 .video-card-info{
   display: flex;
   flex-direction: row;
-  gap:20px;
   overflow: hidden;
+  margin: 10px 0;
 }
 
+.video-thumbnail {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 20vh;
+}
 .video-thumbnail img{
   width: 168px;
+  height: 27vh;
 }
 
 .video-card-title h5{
   font-weight: bold;
   font-size: 1rem;
+  width: 250px;
 }
 
 .video-card-title h6{
@@ -102,8 +117,13 @@ a{
   color: #696969;
 }
 
+.current-video{
+  /* margin-left: 5vw; */
 
-
+}
+iframe{
+  width: 60vw;
+}
 /* Video Description Grid */
 .video-description-grid{
   display: grid;
@@ -148,15 +168,18 @@ a{
 
 /* Buttons */
 .tag-button{
-    background-color:#F4F4F4;
-    color:#808080;
-    margin: 0 15px;
-    padding: 12px 12px;
+    background-color:hsl(0, 0%, 93%);
+    color:black;
+    margin: 0 5px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 50%
+    font-size: 12px;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+    box-shadow: none;
+
   }
   
   .tag-button:hover{
@@ -283,11 +306,9 @@ a{
   justify-content: space-between;
 }
 
-.video-title-icons{
-  word-spacing: 1rem;
-  
+h4 {
+  margin: 0 !important;
 }
-
 .channel-subs h5{
   font-weight: bold;
   font-size: 1rem;
