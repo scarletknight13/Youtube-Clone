@@ -1,10 +1,20 @@
-
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: white;
+}
+::-webkit-scrollbar-thumb{
+    background-color: gray;
+    height: 20%;
+}
+::-webkit-scrollbar-thumb, .side-bar::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
 .side-bar{
     overflow: scroll;
     width: 15vw;
     overflow-x: hidden;
     overflow-y: hidden;
-    border-right: solid 1px lightgray;
+    /* border-right: solid 1px lightgray; */
 }
 .side-bar:hover{
     overflow-y: visible;
@@ -18,6 +28,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: #030303;
+    line-height: 20px;
     justify-content: flex-start;
 }
 .icon, .tab-label{
