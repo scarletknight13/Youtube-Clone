@@ -285,10 +285,14 @@ a{
 
 .video-title-icons{
   word-spacing: 1rem;
- 
   
-
 }
+
+.channel-subs h5{
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .video-title-icons i{
   padding-right: 10px;
   
