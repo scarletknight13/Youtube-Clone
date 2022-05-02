@@ -103,14 +103,17 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 168px;
-  height: 20vh;
+  width: 13vw;
+  height: 18vh;
 }
 .video-thumbnail img{
-  width: 168px;
+  width: 15vw;
   height: 27vh;
 }
 
+.video-card-title {
+  margin-left: 10px;
+}
 .video-card-title h5{
   font-weight: bold;
   font-size: 1rem;
@@ -291,7 +294,7 @@ iframe{
 .comments{
   display: grid;
   grid-template-columns:.1fr 3fr .1fr;
-  grid-template-rows: 1fr .5fr;
+  grid-template-rows: 150px .5fr;
   grid-template-areas: 
   'user comment edit'
   'user reply reply'
@@ -300,7 +303,10 @@ iframe{
 .user-img{
   grid-area: user;
 }
-
+.replies {
+  display: flex;
+  flex-direction: column;
+}
 .user-name{
   grid-area: comment;
   line-height: 1;
