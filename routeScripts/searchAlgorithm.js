@@ -1,7 +1,6 @@
  function sortByRevealance (search, videos){
     let searchTags = search.toLowerCase().split(' ');
     const tagSet = new Set(searchTags)
-    console.log(searchTags);
     const sortedVideos = videos.sort((a, b) => {
         let aTags = new Set(a.description.toLowerCase().split(' '));
         let bTags = new Set(b.description.toLowerCase().split(' '));

@@ -9,35 +9,68 @@ body{
     box-sizing: border-box;
     flex-direction: column;
 }
-.divider{
-    height: 10vh;
-    width: 100vw;
-}
+
 .main{
     height: 90vh;
     display: flex;
+    background-color: rgb(249,249,249);
     justify-content: space-between;
 }
 .tags{
-
+    display: flex;
+    align-items: center;
+    border-bottom: solid .15vh lightgray;
+    margin-bottom: 1.5vh;
+}
+.filter-icon{
+    margin-right: 1vw;
+}
+.filter-label{
+    font-size: 14px;
+    font-family: 'Roboto', 'Arial', 'sans-serif';
+    font-weight: bold;
 }
 .video-content{
-    width: 80%;
+    width: 77%;
     overflow: scroll;
     overflow-x: hidden;
 }
 .video-card{
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
-    height: 20vh;
+    height: 30vh;
     margin-bottom: 10px;
 }
-img{
-    width: 35%;
+.video-card-img{
+    width: 30%;
     height: 100%;
 }
 .video-card-info{
     width: 65%;
+    margin-right: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.video-title-container{
+    height: 15%;
+}
+.video-title{
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 18px;
+}
+.view-and-date-container{
+    height: 10%;
+}
+.description-container{
+    height: 50%;
+    overflow: hidden;
+}
+.description{
+    font-size: 12px;
+    height: 15px;
+    overflow: hidden;
 }
 
 

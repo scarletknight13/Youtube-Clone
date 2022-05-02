@@ -1,8 +1,10 @@
 
 .side-bar{
     overflow: scroll;
+    width: 15vw;
     overflow-x: hidden;
     overflow-y: hidden;
+    border-right: solid 1px lightgray;
 }
 .side-bar:hover{
     overflow-y: visible;
@@ -18,10 +20,10 @@
     align-items: center;
     justify-content: flex-start;
 }
-i, h6{
+.icon, .tab-label{
     margin-left: 1.8vw;
 }
-h6{
+.tab-label{
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 14px;
 }
@@ -34,7 +36,7 @@ h6{
 .tab:hover{
     background-color: lightgray;
 }
-hr{
+.seperator{
     border: none;
     height: .15vh;
     background: lightgray;

@@ -8,10 +8,10 @@ const db = require('../models');
 router.get('/', async (req, res, next)=>{
     try{
         const rawVideoData = await db.Video.find({}).populate("channel");
-        const formattedVideoData = require('../scripts/formatVideoData')([...rawVideoData]);
+        const formattedVideoData = require('../routeScripts/formatVideoData')([...rawVideoData]);
         // console.log(formattedVideoData);
         const context = {videos: formattedVideoData};
-        return res.render('home.ejs', context);
+        return res.render('test2.ejs', context);
     }
     catch(error){
         console.log(error);
