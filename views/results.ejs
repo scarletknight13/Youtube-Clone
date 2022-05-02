@@ -22,7 +22,10 @@
                 <% const video = videos[i] %>
                 <a class="icon-redirect" href="http://localhost:4500/watch/<%=video._id%>">
                     <div class="video-card">
-                        <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
+                        <div class="image-window">
+                            <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
+                        </div>
+                        <!-- <img class="video-card-img"src="<%=video.thumbnail%>" alt=""> -->
                         <div class="video-card-info">
                             <div class="video-title-container">
                                 <h5 class="video-title"><%= video.title %></h5>

@@ -14,7 +14,7 @@ body{
     height: 90vh;
     display: flex;
     background-color: rgb(249,249,249);
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 .tags{
     display: flex;
@@ -24,13 +24,16 @@ body{
 }
 .filter-icon{
     margin-right: 1vw;
+    color: grey;
 }
 .filter-label{
     font-size: 14px;
     font-family: 'Roboto', 'Arial', 'sans-serif';
     font-weight: bold;
+    color: grey;
 }
 .video-content{
+    margin-left: 7vw;
     width: 77%;
     overflow: scroll;
     overflow-x: hidden;
@@ -40,11 +43,22 @@ body{
     justify-content: space-between;
     flex-direction: row;
     height: 30vh;
-    margin-bottom: 10px;
+    margin: 20px 0;
+    /* margin-bottom: 10px; */
+}
+.image-window {
+    width: 24vw;
+    height: 28vh;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .video-card-img{
-    width: 30%;
-    height: 100%;
+    width: 24vw;
+    height: 38vh;
+    
+    /* size: 120%; */
 }
 .video-card-info{
     width: 65%;
