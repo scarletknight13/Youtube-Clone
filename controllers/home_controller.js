@@ -11,7 +11,7 @@ router.get('/', async (req, res, next)=>{
         const formattedVideoData = require('../routeScripts/formatVideoData')([...rawVideoData]);
         // console.log(formattedVideoData);
         const context = {videos: formattedVideoData};
-        return res.render('test2.ejs', context);
+        return res.render('home.ejs', context);
     }
     catch(error){
         console.log(error);
