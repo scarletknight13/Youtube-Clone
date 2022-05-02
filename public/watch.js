@@ -40,4 +40,20 @@ $cancelButton.click(()=>{
     $commentButton.addClass('hidden')
     $cancelButton.addClass('hidden')
 })
-
+const descriptionGrid = document.querySelector(".video-description-grid");
+const description = document.querySelector(".description");
+const showMore = document.querySelector(".show-more");
+let moreOrLess = "SHOW LESS"
+showMore.addEventListener('click', ()=>{
+    // description.classList.toggle("toggle-overflow-visibility")
+    showMore.innerText = moreOrLess;
+    if (moreOrLess === "SHOW LESS") {
+        description.style.overflow = "visible";
+        descriptionGrid.style.gridTemplateRows = `75px ${description.children[0].offsetHeight}px`;
+        moreOrLess = "SHOW MORE";
+    } else {
+        description.style.overflow = "hidden";
+        descriptionGrid.style.gridTemplateRows = `75px 100px`;
+        moreOrLess = "SHOW LESS"
+    }
+})

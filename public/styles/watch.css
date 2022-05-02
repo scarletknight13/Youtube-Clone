@@ -44,10 +44,15 @@ hr{
  background-color: #DDDDDD;
   
 }
+.views-date {
+  font-size: 14px;
+  color: grey;
+}
 
 
   /* Video Section */
 .main-video-section{
+  margin-left: 5vw;
   grid-area: main;
     max-width: 1000px;
     line-height: 2;
@@ -55,10 +60,11 @@ hr{
   
 .profile-img{
     aspect-ratio: 1;
-    width: 50px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     float: left;
-    padding-right: 10px;
+    /* padding-right: 10px; */
   }
 
 
@@ -82,20 +88,33 @@ a{
   margin-bottom: 2vh;
   
 }
-
+.video-comments {
+  position: relative;
+}
 .video-card-info{
   display: flex;
   flex-direction: row;
   overflow: hidden;
+  margin: 10px 0;
 }
 
+.video-thumbnail {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 20vh;
+}
 .video-thumbnail img{
   width: 168px;
+  height: 27vh;
 }
 
 .video-card-title h5{
   font-weight: bold;
   font-size: 1rem;
+  width: 250px;
 }
 
 .video-card-title h6{
@@ -103,19 +122,39 @@ a{
   color: #696969;
 }
 
+.current-video{
+  /* margin-left: 5vw; */
 
-
+}
+iframe{
+  width: 60vw;
+}
 /* Video Description Grid */
 .video-description-grid{
   display: grid;
-  grid-template-columns:.2fr 4fr 1fr;
-  grid-template-rows: .2fr 1fr;
+  padding-bottom: 20px;
+  grid-template-columns: .5fr 4fr 1fr;
+  grid-template-rows: 75px 100px;
   grid-template-areas:
   'profile name subscribed '
-  'description description description '
+  '. description description '
   ;
 }
+.toggle-overflow-visiblity{
+  overflow: visible;
+}
+.show-more {
+  position: absolute;
+  top: -50px;
+  left: 85px;
+  font-size: 14px;
+  color: grey;
+  cursor:pointer;
+}
 .video-description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: profile;
   text-align: center;
   padding-bottom: 0px;
@@ -130,6 +169,7 @@ a{
 .channel-subs{
   grid-area: name;
  line-height: 0;
+ padding-left: 5px;
  
  
 }
@@ -141,23 +181,32 @@ a{
 
 .subscribe-button{
   grid-area: subscribed;
+  border-radius: 5px;
 }
 .description{
+  font-size: 14px;
   grid-area: description;
+  padding-left: 5px;
+  overflow: hidden;
 }
 
-
+.tags {
+  overflow:scroll;
+}
 /* Buttons */
 .tag-button{
-    background-color:#F4F4F4;
-    color:#808080;
-    margin: 0 15px;
-    padding: 12px 12px;
+    background-color:hsl(0, 0%, 93%);
+    color:black;
+    margin: 0 5px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 50%
+    font-size: 12px;
+    border: 1px solid hsl(0, 0%, 83%);
+    border-radius: 20px;
+    box-shadow: none;
+
   }
   
   .tag-button:hover{
@@ -192,6 +241,8 @@ a{
 
 .subscribe{
   background-color: #c00;
+  border-radius: 2px;
+  border: none;
 
 }
 
@@ -284,11 +335,9 @@ a{
   justify-content: space-between;
 }
 
-.video-title-icons{
-  word-spacing: 1rem;
-  
+h4 {
+  margin: 0 !important;
 }
-
 .channel-subs h5{
   font-weight: bold;
   font-size: 1rem;

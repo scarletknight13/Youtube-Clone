@@ -51,7 +51,7 @@
             <div class="video-description-grid">
 
                 <div class="video-description">
-                    <img class ="profile-img"src="<%=currentVideo.thumbnail%>" alt="Artist Profile Picture">
+                    <img class ="profile-img"src="<%=currentVideo.channel.image%>" alt="Artist Profile Picture">
                 </div>
                 <div class="channel-subs">
 
@@ -67,10 +67,12 @@
 
                     <p><%=currentVideo.description%></p>
                 
+                    
                 </div>
             </div>
             <hr>
             <div class="video-comments">
+                <div class="show-more">SHOW MORE</div>
 
                 <form method="POST" action="/watch/<%=currentVideo._id %>" autocomplete="off">
                     <input type="hidden" name="isReply" value="false">
@@ -161,13 +163,13 @@
         
         <div class="side-video-playlist">
             <div class="tags">
-                <button class="tag-button">Cars</button>
+                <button class="tag-button all-tag">All</button>
                 <button class="tag-button">Science</button>
                 <button class="tag-button">Cats</button>
                 <button class="tag-button">Money</button>
             
             </div>
-            <%for(let i = 0; i< allVideos.length; i++){%>
+            <%for(let i = 0; i< allVideos.length; i++){%>   
             <div class="side-video-grid">
                 <a href="/watch/<%=allVideos[i]._id%>">
                     <div class="video-card">

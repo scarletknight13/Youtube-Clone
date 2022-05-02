@@ -45,10 +45,10 @@
     border: 0;
     text-align: left;
     background-color: white;
-    border-radius: 10%;
+    /* border-radius: 20px; */
 }
 .tab:hover{
-    background-color: lightgray;
+    background-color: hsl(0, 0%, 95%);
 }
 .seperator{
     border: none;
