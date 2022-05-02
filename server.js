@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const controllers = require('./controllers')
 
 //Define Global Variables here
-// const PORT = process.env.PORT || 4500;
+const port = process.env.PORT || 4500;
 require('./config/db.connection')
 
 
@@ -20,4 +20,4 @@ app.use('/watch', controllers.watch);
 app.use('/results', controllers.results);
 // app.use('/channel', controllers.channel)
 
-app.listen(process.env.PORT || 4500, () => console.log(`Live Server`))
+app.listen(port || 4500, () => console.log(`Live Server at :${port}`))
