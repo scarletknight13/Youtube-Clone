@@ -18,16 +18,19 @@ mongoose.connection.on('disconnected', () => {
 
 const db = require('./index.js')
 db.Video.create({
-    title: "Molecular Gastronomy - Frozen Parmesan Foam Recipe",
-    videoData: "https://www.youtube.com/embed/KlFmrTKg5JU",
+    title: "Mac Miller - Weekend (feat. Miguel)",
+    videoData: "https://www.youtube.com/embed/N29-54dhVHg",
     channel: "6269582f8c6c55c62158193f",
-    description: `Create Amazing Frozen Parmesan Foams with our Cuisine R-Evolution Kit and Receive 5$ to discover it here by subscribing to our newsletter: 
-    https://molecule-r.com/pages/about-mo...
-    
-    Click here to receive our 40 Free Recipe E-book: https://www.molecule-r.com/free-e-book
-    
-    More Molecule-R products here : https://molecule-r.com/collections/al...`,
-    views: 172756,
-    likes: 1367,
+    description: `Listen to GO:OD AM here: https://smarturl.it/GoodAm
+
+    Follow Mac Miller:
+    https://macmillerswebsite.com/
+    Facebook: https://facebook.com/MacMiller
+    Instagram: https://instagram.com/macmiller/
+    Twitter: https://twitter.com/MacMiller
+    Soundcloud: https://soundcloud.com/larryfisherman`,
+    thumbnail: 'https://i.ytimg.com/vi/N29-54dhVHg/hqdefault.jpg',
+    views: 54950534,
+    likes: 420747,
     comments: []
 })

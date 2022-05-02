@@ -12,7 +12,7 @@ router.get('/', async (req, res, next)=>{
         let sortedVideos = require('../routeScripts/searchAlgorithm')(searchTerms, videos); //needs to be a sorted array of Video objects
         const formattedVideoData = require('../routeScripts/formatVideoData')([...sortedVideos]);
         context = {videos: formattedVideoData}
-        res.render('test.ejs', context);
+        res.render('results.ejs', context);
     }
     catch(error){
         console.log(error);

@@ -4,50 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-     
-    <!-- Scripts Links FontStyles -->
-    <script src="https://kit.fontawesome.com/a2ea15f2f7.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=League+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
-    <%-include('partials/header.ejs') %>
+    <title>Document</title>
+    <%-include('partials/links.ejs')%>
+    <link rel="stylesheet" href="/styles/home.css">
+    <script src="./scripts/home.js" defer></script>
 </head>
 <body>
-  <%-include('partials/sideBar.ejs')%>    
-  <!-- TODO: Export to tag partial -->
-  <div class="tag-buttons">
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-  </div>
-    <div class="list-of-videos">
-        <% for(let i = 0; i < 8; ++i) { %>
-            <% const video = videos[i] %>
-                <div class="video-card">
-                    <div class="image-window">
-                        <img class="video-thumbnail"src="<%=video.thumbnail%>" alt="<%=video.title%>">
-                    </div>
-                    <div class="channel-picture">
-                        <img id="channel-picture" src="<%=video.channel.image%>" alt="Channel Profile Image">
-                    </div>
-                    <!-- <div class="pfp"></div> -->
-                    <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
-                    <div class="channel-info">
-                        <p1><%= video.channel.name %></p1>
-                        <p2> <%= video.views %> • <%= video.createdAt %> </p2>
-                    </div>
-                </div>
-            <% } %>
+    <%-include('partials/header.ejs') %>
+    <div class="main">
+        <%-include('partials/sideBar.ejs')%>    
+        <div class="video-content">
+            <div class="tags">
+                <% for(let i = 0; i < 20; i++){ %>
+                    <button class="tag">Newest</button>
+                <% } %>
+            </div>
+            <div class="video-display">
+                <% for(let i = 0; i < videos.length; ++i){ %>
+                    <% const video = videos[i] %>
+                        <div id="<%= video._id %>"class="video-card">
+                            <div class="video-card-img-container">
+                                <a href="http://localhost:4500/<%=video.videoData %>"></a>
+                                <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
+                            </div>
+                            <div class="video-card-info">
+                                <div class="video-title-container">
+                                    <h5 class="video-title"><%= video.title %></h5>
+                                </div>
+                                <div class="view-and-date-container">
+                                    <h6 class="view-and-date"><%= video.views %> views - <%= video.createdAt %></h6>
+                                </div>
+                            </div>
+                        </div>
+                    
+                <% } %>
+            </div>
+        </div>
     </div>
-
+    
 </body>
 </html>

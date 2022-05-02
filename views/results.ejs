@@ -4,55 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-     
-    <!-- Scripts Links FontStyles -->
-    <script src="https://kit.fontawesome.com/a2ea15f2f7.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=League+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
-    <%-include('partials/header.ejs') %>
+    <title>Document</title>
+    <%-include('partials/links.ejs')%>
+    <link rel="stylesheet" href="/styles/results.css">
 </head>
 <body>
-  <%-include('partials/sideBar.ejs')%>    
-  <!-- TODO: Export to tag partial -->
-  <div class="tag-buttons">
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-      <div class="tag">Tag</div>
-  </div>
-  <div class="main-content">
-    <!-- TODO: Replace with a partial, containing context array of tags and EJS for loop -->
-    <div class="list-of-videos">
-        <% for(let i = 0; i < 24; ++i) { %>
-            <% const video = videos[i] %>
-                <div class="video-card">
-                    <div class="img-container">
-                    <img src="<%=video.thumbnail%>" alt="<%=video.title%>">
+    <%-include('partials/header.ejs') %>
+    <div class="main">
+        <%-include('partials/sideBar.ejs')%>    
+        <div class="video-content">
+            <div class="tags">
+                <i class='filter-icon w3-large fas fa-sliders-h'></i>
+                <h3 class="filter-label">FILTERS</h3>
+                <hr class="horizontal-line">
+            </div>
+            <% for(let i = 0; i < videos.length; ++i){ %>
+                <% const video = videos[i] %>
+                <a class="icon-redirect" href="http://localhost:4500/watch/<%=video._id%>">
+                    <div class="video-card">
+                        <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
+                        <div class="video-card-info">
+                            <div class="video-title-container">
+                                <h5 class="video-title"><%= video.title %></h5>
+                            </div>
+                            <div class="view-and-date-container">
+                                <h6><%= video.views %> views - <%= video.createdAt %></h6>
+                            </div>
+                            <div class="description-container">
+                                <h6 class="description"><%= video.description %></h6>
+                            </div>
+                        </div>
                     </div>
-                    <div class="vid-info">
-                    <img class="pfp" src="<%=video.channel.image%>" alt="Channel Profile Image">
-                    </div>
-                    <!-- <div class="pfp"></div> -->
-                    <div class="text-info">
-                        <a class="video-title" href="/watch/<%=video._id%>"><%= video.title %></a>
-                        <br>
-                        <p1><%= video.channel.name %></p1>
-                        <br>
-                        <p2> <%= video.views %> • <%= video.createdAt %> </p2>
-                    </div>
-                </div>
+                </a>
+                
             <% } %>
+        </div>
     </div>
-  </div>  
-
+    
 </body>
-</html
+</html>
