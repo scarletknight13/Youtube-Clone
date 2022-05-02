@@ -20,7 +20,7 @@
             </div>
             <% for(let i = 0; i < videos.length; ++i){ %>
                 <% const video = videos[i] %>
-                <a class="icon-redirect" href="http://localhost:4500/watch/<%=video._id%>">
+                <a class="icon-redirect" href="/watch/<%=video._id%>">
                     <div class="video-card">
                         <div class="image-window">
                             <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
