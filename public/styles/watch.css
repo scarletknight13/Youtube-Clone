@@ -10,7 +10,7 @@ body{
   color: #282828;
   display: grid;
   grid-template-columns: 4fr 2fr;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows:4fr 1fr;
   grid-template-areas:
   'header header'
   'main side'
@@ -66,8 +66,9 @@ hr{
 /* Side Video Bar */
 .side-video-playlist{
   grid-area: side;
-    float: left;
-    max-width: 480px;
+  float: left;
+  max-width: 480px;
+
 
 }
 a{
@@ -222,14 +223,14 @@ a{
 
 /* Comments */
 
-input[type=text]{
-  width: 98%;
+#addingcomment{
+  width: 98.5%;
   outline: none;
   border-bottom: 1px solid #ccc;
  
 }
 
-input[type=text]:focus{
+#addingcomment:focus{
   display: inline-block;
   position: relative;
   border-color: #282828;
