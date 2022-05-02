@@ -60,10 +60,11 @@ hr{
   
 .profile-img{
     aspect-ratio: 1;
-    width: 50px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     float: left;
-    padding-right: 10px;
+    /* padding-right: 10px; */
   }
 
 
@@ -85,7 +86,9 @@ a{
   flex-direction: column;
   
 }
-
+.video-comments {
+  position: relative;
+}
 .video-card-info{
   display: flex;
   flex-direction: row;
@@ -127,14 +130,29 @@ iframe{
 /* Video Description Grid */
 .video-description-grid{
   display: grid;
-  grid-template-columns:.2fr 4fr 1fr;
-  grid-template-rows: .2fr 1fr;
+  padding-bottom: 20px;
+  grid-template-columns: .5fr 4fr 1fr;
+  grid-template-rows: 75px 100px;
   grid-template-areas:
   'profile name subscribed '
-  'description description description '
+  '. description description '
   ;
 }
+.toggle-overflow-visiblity{
+  overflow: visible;
+}
+.show-more {
+  position: absolute;
+  top: -50px;
+  left: 85px;
+  font-size: 14px;
+  color: grey;
+  cursor:pointer;
+}
 .video-description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: profile;
   text-align: center;
   padding-bottom: 0px;
@@ -149,6 +167,7 @@ iframe{
 .channel-subs{
   grid-area: name;
  line-height: 0;
+ padding-left: 5px;
  
  
 }
@@ -160,12 +179,18 @@ iframe{
 
 .subscribe-button{
   grid-area: subscribed;
+  border-radius: 5px;
 }
 .description{
+  font-size: 14px;
   grid-area: description;
+  padding-left: 5px;
+  overflow: hidden;
 }
 
-
+.tags {
+  overflow:scroll;
+}
 /* Buttons */
 .tag-button{
     background-color:hsl(0, 0%, 93%);
@@ -176,7 +201,7 @@ iframe{
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    border: 1px solid lightgrey;
+    border: 1px solid hsl(0, 0%, 83%);
     border-radius: 20px;
     box-shadow: none;
 
@@ -214,6 +239,8 @@ iframe{
 
 .subscribe{
   background-color: #c00;
+  border-radius: 2px;
+  border: none;
 
 }
 
