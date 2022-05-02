@@ -1,3 +1,4 @@
+
 ::-webkit-scrollbar {
     width: 8px;
     background-color: white;
@@ -9,6 +10,7 @@
 ::-webkit-scrollbar-thumb, .side-bar::-webkit-scrollbar-track{
     border-radius: 10px;
 }
+
 .side-bar{
     overflow: scroll;
     width: 15vw;

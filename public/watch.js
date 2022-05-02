@@ -13,7 +13,13 @@ const $textarea = $('#addingcomment')
 
 const $commentSection =$('.comments')
 
+const $heart =$('.fa-heart')
 
+
+
+$heart.click(()=>{
+    $heart.css('color', 'red')
+})
 
 $commentSection.hover(()=>{
     $editPin.removeClass('hidden')

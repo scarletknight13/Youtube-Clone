@@ -1,15 +1,16 @@
 /* Imports */
 @import "header.css";
+@import 'sideBar.css';
 
 /* Body */
 body{
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Serif', serif;
   color: #282828;
   display: grid;
   grid-template-columns: 4fr 2fr;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows:4fr 1fr;
   grid-template-areas:
   'header header'
   'main side'
@@ -21,7 +22,7 @@ body{
   max-width: 1500px;
 }
 
-.sidenav{
+.header{
   grid-area: header;
 }
 /* List Style */
@@ -65,9 +66,13 @@ hr{
 /* Side Video Bar */
 .side-video-playlist{
   grid-area: side;
-    float: left;
-    max-width: 480px;
+  float: left;
+  max-width: 480px;
 
+
+}
+a{
+  text-decoration: none;
 }
 
 .side-video-grid{
@@ -75,14 +80,29 @@ hr{
   flex-direction: column;
   
 }
-.side-video-grid p{
-  justify-content: end;
+
+.video-card-info{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  overflow: hidden;
 }
 
-.video-title img{
+.video-thumbnail img{
   width: 168px;
-
 }
+
+.video-card-title h5{
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.video-card-title h6{
+  font-size: .8rem;
+  color: #696969;
+}
+
+
 
 /* Video Description Grid */
 .video-description-grid{
@@ -150,7 +170,7 @@ hr{
   margin: 0 15px;
   width: 130px;
   height: 40px;
-  padding: 12px 12px;
+  padding: 0;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -203,14 +223,14 @@ hr{
 
 /* Comments */
 
-input[type=text]{
-  width: 98%;
+#addingcomment{
+  width: 98.5%;
   outline: none;
   border-bottom: 1px solid #ccc;
  
 }
 
-input[type=text]:focus{
+#addingcomment:focus{
   display: inline-block;
   position: relative;
   border-color: #282828;
@@ -231,7 +251,7 @@ input[type=text]:focus{
 
 .user-name{
   grid-area: comment;
-  line-height: 0;
+  line-height: 1;
   padding-top: .2px;
 }
 .like-reply{
@@ -241,10 +261,14 @@ input[type=text]:focus{
 .like-reply button{
   cursor: pointer;
   word-spacing: 1rem;
+  border: none;
+  background-color: white;
 }
 .edit-pin{
   float: right;
   cursor: pointer;
+  border: none;
+  background-color: white;
   grid-area: edit;
   
 }
@@ -261,10 +285,14 @@ input[type=text]:focus{
 
 .video-title-icons{
   word-spacing: 1rem;
- 
   
-
 }
+
+.channel-subs h5{
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .video-title-icons i{
   padding-right: 10px;
   
@@ -272,4 +300,6 @@ input[type=text]:focus{
 
 .video-title-icons button{
   cursor: pointer;
+  background-color: white;
+  border: none;
 }
