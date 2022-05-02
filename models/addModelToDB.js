@@ -18,8 +18,8 @@ mongoose.connection.on('disconnected', () => {
 
 const db = require('./index.js')
 db.Video.create({
-    title: "Mac Miller - Weekend (feat. Miguel)",
-    videoData: "https://www.youtube.com/embed/N29-54dhVHg",
+    title: "Cycle Detection In Graph Using DFS",
+    videoData: "https://www.youtube.com/embed/eCG3T1m7rFY",
     channel: "6269582f8c6c55c62158193f",
     description: `Listen to GO:OD AM here: https://smarturl.it/GoodAm
 
@@ -29,7 +29,7 @@ db.Video.create({
     Instagram: https://instagram.com/macmiller/
     Twitter: https://twitter.com/MacMiller
     Soundcloud: https://soundcloud.com/larryfisherman`,
-    thumbnail: 'https://i.ytimg.com/vi/N29-54dhVHg/hqdefault.jpg',
+    thumbnail: 'https://i.ytimg.com/vi/eCG3T1m7rFY/hqdefault.jpg',
     views: 54950534,
     likes: 420747,
     comments: []
