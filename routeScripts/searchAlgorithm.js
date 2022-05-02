@@ -17,7 +17,7 @@ function sortByRelevance (search, videos){
         }
             
     })
-    console.log(searchTags);
+    // console.log(searchTags);
     let titleFactor=10;
     const tagSet = new Set(searchTags)
     const sortedVideos = videos.sort((a, b) => {
