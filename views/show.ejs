@@ -98,9 +98,6 @@
                                 <button><i class="fa-regular fa-thumbs-up like-button"></i></button>
                                 <button><i class="fa-regular fa-thumbs-down"></i></button>
                                 <button><i class="fa-regular fa-heart"></i></button>
-                                <!-- <form method="POST" action="/watch/<%=currentVideo._id%>">
-
-                                </form> -->
                                 <button>REPLY</button>
                             </div>
                         </div>
@@ -108,7 +105,7 @@
                         <div class="edit-delete hidden">
                             
                             <form method="POST" action="/watch/<%= comment._id %>?_method=PUT">
-                                <input type="text" name="textContent" value="<%= comment.textContent %>">
+                                <input id="addingcomment" type="text" name="textContent" value="<%= comment.textContent %>">
                                 <input type="hidden" name="videoId" value="<%= currentVideo._id %>">
                                 <input class="edit-button" type="submit" value="Edit">
     
