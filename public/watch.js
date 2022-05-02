@@ -24,7 +24,7 @@ $editPin.click(()=>{
     $editDelete.removeClass('hidden')
 
 })
-
+  
 $comment.click(()=>{
     $commentButton.removeClass('hidden')
     $cancelButton.removeClass('hidden')

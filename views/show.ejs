@@ -94,7 +94,7 @@
                             <h5><%=currentVideo.channel.name%></h5>
                             <p><%=comment.textContent%></p>
                             <div class="like-reply">
-                                <button><i class="fa-regular fa-thumbs-up"></i></button>
+                                <button><i class="fa-regular fa-thumbs-up like-button"></i></button>
                                 <button><i class="fa-regular fa-thumbs-down"></i></button>
                                 <button>REPLY</button>
                             </div>
@@ -133,9 +133,13 @@
                 <button class="tag-button">Cats</button>
                 <button class="tag-button">Money</button>
             </div>
-            <%for(let i = 0; i< 10; i++){%>
-                <p><a class="video-title" href="/watch/<%=allVideos[i]._id%>"><img src="<%=allVideos[i].thumbnail%>" alt="<%=allVideos[i].title%>"><%= allVideos[i].title %></a></p>
-           <% }%>
+            <div class="side-video-grid">
+
+                <%for(let i = 0; i< 10; i++){%>
+                    <p><a class="video-title" href="/watch/<%=allVideos[i]._id%>"><img src="<%=allVideos[i].thumbnail%>" alt="<%=allVideos[i].title%>"><%= allVideos[i].title %></a></p>
+               <% }%>
+            
+            </div>
 
         </div>
         
