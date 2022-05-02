@@ -1,5 +1,6 @@
 /* Imports */
 @import "header.css";
+@import 'sideBar.css';
 
 /* Body */
 body{
@@ -21,7 +22,7 @@ body{
   max-width: 1500px;
 }
 
-.sidenav{
+.header{
   grid-area: header;
 }
 /* List Style */
@@ -150,7 +151,7 @@ hr{
   margin: 0 15px;
   width: 130px;
   height: 40px;
-  padding: 12px 12px;
+  padding: 0;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -241,10 +242,14 @@ input[type=text]:focus{
 .like-reply button{
   cursor: pointer;
   word-spacing: 1rem;
+  border: none;
+  background-color: white;
 }
 .edit-pin{
   float: right;
   cursor: pointer;
+  border: none;
+  background-color: white;
   grid-area: edit;
   
 }
@@ -272,4 +277,6 @@ input[type=text]:focus{
 
 .video-title-icons button{
   cursor: pointer;
+  background-color: white;
+  border: none;
 }
