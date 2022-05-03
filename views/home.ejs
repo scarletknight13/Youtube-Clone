@@ -25,7 +25,7 @@
                     <% const video = videos[i] %>
                         <div id="<%= video._id %>"class="video-card">
                             <div class="video-card-img-container">
-                                <a href="http://localhost:4500/<%=video.videoData %>"></a>
+                                <a href="/<%=video.videoData %>"></a>
                                 <img class="video-card-img"src="<%=video.thumbnail%>" alt="">
                             </div>
                             <div class="video-card-info">
