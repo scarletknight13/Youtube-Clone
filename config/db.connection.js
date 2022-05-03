@@ -4,7 +4,7 @@ require('dotenv').config();
 
 //Connect to the database
 const connectionStr = process.env.MONGODB_URI;
-mongoose.connect(connectionStr);
+mongoose.connect(process.env.MONGODB_URI);
 
 
 //Database Event Handling
