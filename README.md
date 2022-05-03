@@ -19,7 +19,7 @@ In our project we'll be emulating the sites most functionality.
 - Our comment schema will consist of a user name, context, perhaps a like
 - Once a video is clicked on, the video should take up a good portion of the screen while still leaving other various components in place
 - On the video page a user can write down in a text area and submit a comment. The video can also be liked
-## MVP GOALS
+## MVP Goals
 - As a user we want to be able to see other users' comments
 - As a user we want to be able to click on a video (random array) and it will send to that specific page
 - As a user we want to be able to comment on a video
