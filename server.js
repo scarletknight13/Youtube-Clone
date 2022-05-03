@@ -20,4 +20,4 @@ app.use('/watch', controllers.watch);
 app.use('/results', controllers.results);
 // app.use('/channel', controllers.channel)
 
-app.listen(process.env.PORT, () => console.log(`Live Server`))
+app.listen(port, () => console.log(`Live Server`))
