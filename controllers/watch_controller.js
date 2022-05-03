@@ -4,8 +4,6 @@ const router = express.Router()
 
 const db = require('../models');
 
-
- 
 router.get('/:id', async (req, res, next)=>{
     try{       
      //grab all videos first, which is an array

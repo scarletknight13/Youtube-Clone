@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const controllers = require('./controllers')
 
 //Define Global Variables here
-const PORT = 4500;
+const PORT = process.env.PORT || 4500;
 require('./config/db.connection')
 
 
