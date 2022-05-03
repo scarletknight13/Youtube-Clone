@@ -8,7 +8,9 @@
 YouTube is a social media site that came out in 2007. It is one of the most popular social media sites out now. It allows creators to post videos for all to see and comment and comment on.
 In our project we'll be emulating the sites most functionality.
 ## Wire Frames
-![image](https://github.com/scarletknight13/project2/blob/main/Project%20Screenshots/homepage.png)
+![image](https://github.com/scarletknight13/project2/blob/main/HomePageWireframe.png)
+![image](https://github.com/scarletknight13/project2/blob/main/Project%20Screenshots/resultspage.png)
+![image](https://github.com/scarletknight13/project2/blob/main/Project%20Screenshots/watchpage.png)
 ## ERDS
 ![image](https://github.com/scarletknight13/project2/blob/main/ERD.png)
 ## User Stories
